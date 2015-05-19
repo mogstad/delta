@@ -1,26 +1,68 @@
 import Foundation
 
 enum DeltaRecordAction: Int {
-  case Add, Remove, Move, Change, RemoveSection, ReloadSection
+  case Add, Remove, Move, Change, Reload
+
+  func toCollectionSectionRecordAction() -> DeltaCollectionRecordAction {
+    switch self {
+    case .Add:
+      return .AddSection
+    case .Remove:
+      return .RemoveSection
+    case .Move:
+      return .MoveSection
+    case .Change, .Reload:
+      return .ReloadSection
+    }
+  }
+
+  func toCollectionItemRecordAction() -> DeltaCollectionRecordAction {
+    switch self {
+    case .Add:
+      return .AddItem
+    case .Remove:
+      return .RemoveItem
+    case .Move:
+      return .MoveItem
+    case .Change:
+      return .ChangeItem
+    case .Reload:
+      return .ReloadItem
+    }
+  }
+
 }
 
 public struct DeltaRecord<T: Equatable>: Equatable, Printable {
 
   let type: DeltaRecordAction
   let item: T?
-  let index: UInt
-  let fromIndex: UInt
+  let index: Int
+  let fromIndex: Int
   public var description: String {
-    get {
-      return "DeltaRecord type='\(self.type.rawValue)' index='\(self.index)' item='\(self.item)' fromIndex='\(self.fromIndex)'"
-    }
+    return "DeltaRecord type='\(self.type.rawValue)' index='\(self.index)' item='\(self.item)' fromIndex='\(self.fromIndex)'"
   }
 
-  init(type: DeltaRecordAction, item: T?, index: UInt, fromIndex: UInt = UInt.max) {
+  init(type: DeltaRecordAction, item: T?, index: Int, fromIndex: Int = Int.max) {
     self.type = type
     self.item = item
     self.index = index
     self.fromIndex = fromIndex
+  }
+
+  func toCollectionSectionAction() -> DeltaCollectionRecord {
+    return DeltaCollectionRecord(
+      type: self.type.toCollectionSectionRecordAction(),
+      index: Int(self.index),
+      fromIndex: Int(self.fromIndex))
+  }
+
+  func toCollectionItemAction(section: Int) -> DeltaCollectionRecord {
+    return DeltaCollectionRecord(
+      type: self.type.toCollectionItemRecordAction(),
+      index: Int(self.index),
+      section: section,
+      fromIndex: Int(self.fromIndex))
   }
 
 }

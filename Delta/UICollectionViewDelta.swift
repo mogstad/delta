@@ -3,29 +3,40 @@ import UIKit
 public extension UICollectionView {
   
   public typealias CollectionViewUpdateCallback = (NSIndexPath) -> Void
-  public func performUpdates<T>(records: [DeltaRecord<T>], section: Int, updateCallback: CollectionViewUpdateCallback? = nil) {
+
+  public func performUpdates(records: [DeltaCollectionRecord], updateCallback: CollectionViewUpdateCallback? = nil) {
     self.performBatchUpdates({
       for record in records {
-        let indexPath = NSIndexPath(forItem: Int(record.index), inSection: section)
+        let indexPath = NSIndexPath(forItem: record.index, inSection: record.section)
         switch record.type {
-        case .Add:
+        case .AddItem:
           self.insertItemsAtIndexPaths([indexPath])
-        case .Remove:
+        case .RemoveItem:
           self.deleteItemsAtIndexPaths([indexPath])
-        case .Move:
-          let fromIndexPath = NSIndexPath(forItem: Int(record.fromIndex), inSection: section)
+        case .MoveItem:
+          let fromIndexPath = NSIndexPath(forItem: record.fromIndex, inSection: record.section)
           self.moveItemAtIndexPath(fromIndexPath, toIndexPath: indexPath)
-        case .Change:
+        case .ChangeItem, .ReloadItem:
           if let updateCallback = updateCallback {
             updateCallback(indexPath)
           } else {
             self.reloadItemsAtIndexPaths([indexPath])
           }
-        case .ReloadSection, .RemoveSection:
-          self.reloadSections(NSIndexSet(index: section))
+        case .AddSection:
+          self.insertSections(NSIndexSet(index: record.index))
+        case .RemoveSection:
+          self.deleteSections(NSIndexSet(index: record.index))
+        case .ReloadSection:
+          self.reloadSections(NSIndexSet(index: record.index))
+        case .MoveSection:
+          self.moveSection(record.fromIndex, toSection: record.index)
         }
       }
-    }, completion: nil)
+      }, completion: nil)
   }
+
+
+
+
 
 }

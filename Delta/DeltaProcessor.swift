@@ -16,6 +16,7 @@ apply the delta records to a section in the view.
 */
 
 public class DeltaProcessor<T: Hashable> {
+  
   private typealias DeltaCache = [Int: T]
   private typealias Record = DeltaRecord<T>
 
@@ -29,7 +30,7 @@ public class DeltaProcessor<T: Hashable> {
 
   public func generate() -> [Record] {
     if self.from.count == 0 || self.to.count == 0 {
-      return [DeltaRecord(type: .ReloadSection, item: nil, index: 0, fromIndex: 0)]
+      return [DeltaRecord(type: .Reload, item: nil, index: 0, fromIndex: 0)]
     }
     let fromLookup = self.itemLookup(self.from)
     let toLookup = self.itemLookup(self.to)
@@ -38,6 +39,16 @@ public class DeltaProcessor<T: Hashable> {
     let added = self.added(fromLookup)
     let moved = self.moved(fromLookup, toCache: toLookup)
     return removed + added + moved + changed
+  }
+
+  public func generateInSection(section: Int) -> [DeltaCollectionRecord] {
+    let records = self.generate()
+    return records.map { $0.toCollectionItemAction(section) }
+  }
+
+  public func generateForSections() -> [DeltaCollectionRecord] {
+    let records = self.generate()
+    return records.map { $0.toCollectionSectionAction() }
   }
 
   private func moved(fromCache: DeltaCache, toCache: DeltaCache) -> [Record] {
@@ -81,8 +92,8 @@ public class DeltaProcessor<T: Hashable> {
           let record = Record(
             type: .Move,
             item: compareItem,
-            index: UInt(finalIndex),
-            fromIndex: UInt(compareIndex))
+            index: finalIndex,
+            fromIndex: compareIndex)
 
           records.append(record)
           continue
@@ -122,14 +133,14 @@ public class DeltaProcessor<T: Hashable> {
         let record = Record(
           type: .Remove,
           item: item,
-          index: UInt(index))
+          index: index)
         
         removed.append(record)
       } else if cachedItem != item {
         let record = Record(
           type: .Change,
           item: item,
-          index: UInt(index))
+          index: index)
 
         changed.append(record)
       }
@@ -146,7 +157,7 @@ public class DeltaProcessor<T: Hashable> {
         let record = Record(
           type: .Add,
           item: element,
-          index: UInt(index))
+          index: index)
 
         added.append(record)
       }

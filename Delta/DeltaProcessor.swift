@@ -17,7 +17,7 @@ apply the delta records to a section in the view.
 
 public class DeltaProcessor<T: Hashable> {
   
-  private typealias DeltaCache = [Int: T]
+  private typealias DeltaCache = [Int: (index: Int, item: T)]
   private typealias Record = DeltaRecord<T>
 
   private let from: [T]
@@ -117,7 +117,7 @@ public class DeltaProcessor<T: Hashable> {
     var cache: DeltaCache = Dictionary()
     for (index, item) in enumerate(items) {
       let identifier = self.identifier(item)
-      cache[identifier] = item
+      cache[identifier] = (index, item)
     }
     return cache
   }
@@ -128,21 +128,23 @@ public class DeltaProcessor<T: Hashable> {
 
     for (index, item) in enumerate(self.from) {
       let identifier = self.identifier(item)
-      let cachedItem = toCache[identifier]
-      if cachedItem == nil {
+      if let cacheEntry = toCache[identifier] {
+        if cacheEntry.item != item {
+          let record = Record(
+            type: .Change,
+            item: item,
+            index: index,
+            fromIndex: cacheEntry.index)
+
+          changed.append(record)
+        }
+      } else {
         let record = Record(
           type: .Remove,
           item: item,
           index: index)
-        
-        removed.append(record)
-      } else if cachedItem != item {
-        let record = Record(
-          type: .Change,
-          item: item,
-          index: index)
 
-        changed.append(record)
+        removed.append(record)
       }
     }
     return (removed, changed)

@@ -2,7 +2,7 @@ import UIKit
 
 public extension UICollectionView {
   
-  public typealias CollectionViewUpdateCallback = (NSIndexPath) -> Void
+  public typealias CollectionViewUpdateCallback = (NSIndexPath, NSIndexPath) -> Void
 
   public func performUpdates(records: [DeltaCollectionRecord], updateCallback: CollectionViewUpdateCallback? = nil) {
     self.performBatchUpdates({
@@ -18,7 +18,8 @@ public extension UICollectionView {
           self.moveItemAtIndexPath(fromIndexPath, toIndexPath: indexPath)
         case .ChangeItem, .ReloadItem:
           if let updateCallback = updateCallback {
-            updateCallback(indexPath)
+            let newIndexPath = NSIndexPath(forItem: record.fromIndex, inSection: record.section)
+            updateCallback(indexPath, newIndexPath)
           } else {
             self.reloadItemsAtIndexPaths([indexPath])
           }
@@ -32,7 +33,7 @@ public extension UICollectionView {
           self.moveSection(record.fromIndex, toSection: record.index)
         }
       }
-      }, completion: nil)
+    }, completion: nil)
   }
 
 

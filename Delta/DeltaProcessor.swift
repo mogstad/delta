@@ -28,10 +28,11 @@ public class DeltaProcessor<T: Hashable> {
     self.to = to
   }
 
-  public func generate() -> [Record] {
-    if self.from.count == 0 || self.to.count == 0 {
+  public func generate(preferReload: Bool = true) -> [Record] {
+    if preferReload && (self.from.count == 0 || self.to.count == 0) {
       return [DeltaRecord(type: .Reload, item: nil, index: 0, fromIndex: 0)]
     }
+
     let fromLookup = self.itemLookup(self.from)
     let toLookup = self.itemLookup(self.to)
 
@@ -47,7 +48,7 @@ public class DeltaProcessor<T: Hashable> {
   }
 
   public func generateForSections() -> [DeltaCollectionRecord] {
-    let records = self.generate()
+    let records = self.generate(preferReload: false)
     return records.map { $0.toCollectionSectionAction() }
   }
 

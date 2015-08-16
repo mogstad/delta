@@ -3,6 +3,7 @@ import UIKit
 public extension UITableView {
 
   public func performUpdates(records: [DeltaCollectionRecord]) {
+    self.beginUpdates()
     for record in records {
       let indexPath = NSIndexPath(forRow: record.index, inSection: record.section)
       switch record.type {
@@ -25,6 +26,7 @@ public extension UITableView {
         self.deleteSections(NSIndexSet(index: record.section), withRowAnimation: .Automatic)
       }
     }
+    self.endUpdates()
   }
   
 }

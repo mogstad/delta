@@ -2,7 +2,9 @@ import UIKit
 
 public extension UITableView {
 
-  public func performUpdates(records: [DeltaCollectionRecord]) {
+  public typealias TableViewUpdateCallback = (NSIndexPath, NSIndexPath) -> Void
+
+  public func performUpdates(records: [DeltaCollectionRecord], updateCallback: TableViewUpdateCallback? = nil) {
     self.beginUpdates()
     for record in records {
       let indexPath = NSIndexPath(forRow: record.index, inSection: record.section)
@@ -15,7 +17,12 @@ public extension UITableView {
         let fromIndexPath = NSIndexPath(forRow: record.fromIndex, inSection: record.section)
         self.moveRowAtIndexPath(fromIndexPath, toIndexPath: indexPath)
       case .ChangeItem, .ReloadItem:
-        self.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        let newIndexPath = NSIndexPath(forRow: record.fromIndex, inSection: record.section)
+        if let updateCallback = updateCallback {
+          updateCallback(indexPath, newIndexPath)
+        } else {
+          self.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
       case .ReloadSection:
         self.reloadSections(NSIndexSet(index: record.section), withRowAnimation: .Automatic)
       case .MoveSection:

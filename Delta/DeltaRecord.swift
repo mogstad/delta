@@ -27,7 +27,7 @@ enum DeltaRecordAction: Int {
     case .Change:
       return .ChangeItem
     case .Reload:
-      return .ReloadItem
+      return .ReloadSection
     }
   }
 

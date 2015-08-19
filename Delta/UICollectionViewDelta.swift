@@ -28,7 +28,7 @@ public extension UICollectionView {
         case .RemoveSection:
           self.deleteSections(NSIndexSet(index: record.index))
         case .ReloadSection:
-          self.reloadSections(NSIndexSet(index: record.index))
+          self.reloadSections(NSIndexSet(index: record.section))
         case .MoveSection:
           self.moveSection(record.fromIndex, toSection: record.index)
         }

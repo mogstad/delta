@@ -7,7 +7,7 @@ enum DeltaCollectionRecordAction: Int {
   case RemoveSection, AddSection, ReloadSection, MoveSection
 }
 
-public struct DeltaCollectionRecord: Equatable, Printable {
+public struct DeltaCollectionRecord: Equatable, CustomStringConvertible {
 
   let type: DeltaCollectionRecordAction
   let index: Int

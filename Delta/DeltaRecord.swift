@@ -33,7 +33,7 @@ enum DeltaRecordAction: Int {
 
 }
 
-public struct DeltaRecord<T: Equatable>: Equatable, Printable {
+public struct DeltaRecord<T: Equatable>: Equatable, CustomStringConvertible {
 
   let type: DeltaRecordAction
   let item: T?

@@ -18,7 +18,7 @@ apply the delta records to a section in the view.
 public class DeltaProcessor<T: Hashable> {
   
   private typealias DeltaCache = [Int: (index: Int, item: T)]
-  private typealias Record = DeltaRecord<T>
+  public typealias Record = DeltaRecord<T>
 
   private let from: [T]
   private let to: [T]
@@ -48,7 +48,7 @@ public class DeltaProcessor<T: Hashable> {
   }
 
   public func generateForSections() -> [DeltaCollectionRecord] {
-    let records = self.generate(preferReload: false)
+    let records = self.generate(false)
     return records.map { $0.toCollectionSectionAction() }
   }
 
@@ -56,12 +56,12 @@ public class DeltaProcessor<T: Hashable> {
     var delta = 0
     var processed: [Int: Int] = Dictionary()
 
-    var fromIndexCache = self.createIndexCache(self.from)
+    let _ = self.createIndexCache(self.from)
     var toIndexCache = self.createIndexCache(self.to)
 
     var records: [Record] = []
 
-    for (index, item) in enumerate(self.to) {
+    for (index, item) in self.to.enumerate() {
       while true {
         if processed[index] != nil {
           delta -= 1
@@ -108,7 +108,7 @@ public class DeltaProcessor<T: Hashable> {
 
   private func createIndexCache(collection: [T]) -> [Int: Int] {
     var cache = Dictionary<Int, Int>()
-    for (index, item) in enumerate(collection) {
+    for (index, item) in collection.enumerate() {
       cache[self.identifier(item)] = index
     }
     return cache
@@ -116,7 +116,7 @@ public class DeltaProcessor<T: Hashable> {
 
   private func itemLookup(items: [T]) -> DeltaCache {
     var cache: DeltaCache = Dictionary()
-    for (index, item) in enumerate(items) {
+    for (index, item) in items.enumerate() {
       let identifier = self.identifier(item)
       cache[identifier] = (index, item)
     }
@@ -127,7 +127,7 @@ public class DeltaProcessor<T: Hashable> {
     var removed = Array<Record>()
     var changed = Array<Record>()
 
-    for (index, item) in enumerate(self.from) {
+    for (index, item) in self.from.enumerate() {
       let identifier = self.identifier(item)
       if let cacheEntry = toCache[identifier] {
         if cacheEntry.item != item {
@@ -154,7 +154,7 @@ public class DeltaProcessor<T: Hashable> {
   private func added(fromCache: DeltaCache) -> [Record] {
     var added = Array<Record>()
 
-    for (index, element) in enumerate(self.to) {
+    for (index, element) in self.to.enumerate() {
       let identifier = self.identifier(element)
       if fromCache[identifier] == nil {
         let record = Record(

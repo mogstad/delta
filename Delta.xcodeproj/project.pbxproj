@@ -7,25 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D09E0D51BC4C006002B95B9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D09E0D11BC4BFFF002B95B9 /* Nimble.framework */; };
+		2D09E0D61BC4C006002B95B9 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D09E0D21BC4BFFF002B95B9 /* Quick.framework */; };
+		2D09E0D71BC4C009002B95B9 /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 2D09E0D11BC4BFFF002B95B9 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2D09E0D81BC4C009002B95B9 /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 2D09E0D21BC4BFFF002B95B9 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2D09E0E71BC4C364002B95B9 /* Delta.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D285C651AE34CA700CE1587 /* Delta.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2D09E0E81BC4C36F002B95B9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2D09E0CD1BC4BEA8002B95B9 /* LICENSE */; };
+		2D09E0EA1BC4C3DB002B95B9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2D09E0CD1BC4BEA8002B95B9 /* LICENSE */; };
+		2D09E0EB1BC4C3FC002B95B9 /* DeltaProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C831AE34D4800CE1587 /* DeltaProcessor.swift */; };
+		2D09E0EC1BC4C3FC002B95B9 /* SectionedDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0FC5931B0B2661004FE78C /* SectionedDataProcessor.swift */; };
+		2D09E0ED1BC4C3FC002B95B9 /* DeltaRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C841AE34D4800CE1587 /* DeltaRecord.swift */; };
+		2D09E0EE1BC4C3FC002B95B9 /* DeltaCollectionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0FC5911B0A27AC004FE78C /* DeltaCollectionRecord.swift */; };
 		2D0FC5921B0A27AC004FE78C /* DeltaCollectionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0FC5911B0A27AC004FE78C /* DeltaCollectionRecord.swift */; };
 		2D0FC5941B0B2661004FE78C /* SectionedDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0FC5931B0B2661004FE78C /* SectionedDataProcessor.swift */; };
-		2D0FC5951B0B2734004FE78C /* DeltaCollectionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0FC5911B0A27AC004FE78C /* DeltaCollectionRecord.swift */; };
-		2D0FC5961B0B273D004FE78C /* SectionedDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0FC5931B0B2661004FE78C /* SectionedDataProcessor.swift */; };
 		2D285C661AE34CA700CE1587 /* Delta.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D285C651AE34CA700CE1587 /* Delta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2D285C6C1AE34CA700CE1587 /* Delta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D285C601AE34CA700CE1587 /* Delta.framework */; };
 		2D285C851AE34D4800CE1587 /* DeltaProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C831AE34D4800CE1587 /* DeltaProcessor.swift */; };
-		2D285C861AE34D4800CE1587 /* DeltaProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C831AE34D4800CE1587 /* DeltaProcessor.swift */; };
 		2D285C871AE34D4800CE1587 /* DeltaRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C841AE34D4800CE1587 /* DeltaRecord.swift */; };
-		2D285C881AE34D4800CE1587 /* DeltaRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C841AE34D4800CE1587 /* DeltaRecord.swift */; };
 		2D285C8A1AE34D9700CE1587 /* UITableViewDelta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C891AE34D9700CE1587 /* UITableViewDelta.swift */; };
-		2D285C8B1AE34D9700CE1587 /* UITableViewDelta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C891AE34D9700CE1587 /* UITableViewDelta.swift */; };
 		2D285C8D1AE34DAF00CE1587 /* DeltaProcessorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C8C1AE34DAF00CE1587 /* DeltaProcessorSpec.swift */; };
-		2D285C911AE34DE100CE1587 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D285C8F1AE34DE100CE1587 /* Nimble.framework */; };
-		2D285C921AE34DE100CE1587 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D285C901AE34DE100CE1587 /* Quick.framework */; };
-		2D285C941AE34E4D00CE1587 /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 2D285C8F1AE34DE100CE1587 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2D285C951AE34E4D00CE1587 /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 2D285C901AE34DE100CE1587 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2D285C971AE43A3500CE1587 /* UICollectionViewDelta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C961AE43A3500CE1587 /* UICollectionViewDelta.swift */; };
-		2D285C981AE43BDC00CE1587 /* UICollectionViewDelta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C961AE43A3500CE1587 /* UICollectionViewDelta.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +46,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2D285C941AE34E4D00CE1587 /* Nimble.framework in Copy Frameworks */,
-				2D285C951AE34E4D00CE1587 /* Quick.framework in Copy Frameworks */,
+				2D09E0D71BC4C009002B95B9 /* Nimble.framework in Copy Frameworks */,
+				2D09E0D81BC4C009002B95B9 /* Quick.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,23 +55,34 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2D09E0CD1BC4BEA8002B95B9 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		2D09E0CE1BC4BEA8002B95B9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2D09E0D11BC4BFFF002B95B9 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		2D09E0D21BC4BFFF002B95B9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		2D09E0DE1BC4C2C2002B95B9 /* Delta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Delta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D09E0E21BC4C2C2002B95B9 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		2D0FC5911B0A27AC004FE78C /* DeltaCollectionRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeltaCollectionRecord.swift; sourceTree = "<group>"; };
 		2D0FC5931B0B2661004FE78C /* SectionedDataProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionedDataProcessor.swift; sourceTree = "<group>"; };
 		2D285C601AE34CA700CE1587 /* Delta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Delta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D285C641AE34CA700CE1587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D285C641AE34CA700CE1587 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		2D285C651AE34CA700CE1587 /* Delta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Delta.h; sourceTree = "<group>"; };
-		2D285C6B1AE34CA700CE1587 /* DeltaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeltaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D285C711AE34CA700CE1587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D285C6B1AE34CA700CE1587 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D285C711AE34CA700CE1587 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		2D285C831AE34D4800CE1587 /* DeltaProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeltaProcessor.swift; sourceTree = "<group>"; };
 		2D285C841AE34D4800CE1587 /* DeltaRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeltaRecord.swift; sourceTree = "<group>"; };
 		2D285C891AE34D9700CE1587 /* UITableViewDelta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewDelta.swift; sourceTree = "<group>"; };
 		2D285C8C1AE34DAF00CE1587 /* DeltaProcessorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeltaProcessorSpec.swift; sourceTree = "<group>"; };
-		2D285C8F1AE34DE100CE1587 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		2D285C901AE34DE100CE1587 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		2D285C961AE43A3500CE1587 /* UICollectionViewDelta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewDelta.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2D09E0DA1BC4C2C2002B95B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2D285C5C1AE34CA700CE1587 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,34 +95,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D285C6C1AE34CA700CE1587 /* Delta.framework in Frameworks */,
-				2D285C911AE34DE100CE1587 /* Nimble.framework in Frameworks */,
-				2D285C921AE34DE100CE1587 /* Quick.framework in Frameworks */,
+				2D09E0D51BC4C006002B95B9 /* Nimble.framework in Frameworks */,
+				2D09E0D61BC4C006002B95B9 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D285C561AE34CA700CE1587 = {
-			isa = PBXGroup;
-			children = (
-				2D285C621AE34CA700CE1587 /* Delta */,
-				2D285C6F1AE34CA700CE1587 /* DeltaTests */,
-				2D285C8E1AE34DCD00CE1587 /* Frameworks */,
-				2D285C611AE34CA700CE1587 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		2D285C611AE34CA700CE1587 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2D285C601AE34CA700CE1587 /* Delta.framework */,
-				2D285C6B1AE34CA700CE1587 /* DeltaTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		2D285C621AE34CA700CE1587 /* Delta */ = {
+		2D09E0C81BC4BDBD002B95B9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				2D285C831AE34D4800CE1587 /* DeltaProcessor.swift */,
@@ -119,49 +112,102 @@
 				2D0FC5911B0A27AC004FE78C /* DeltaCollectionRecord.swift */,
 				2D285C891AE34D9700CE1587 /* UITableViewDelta.swift */,
 				2D285C961AE43A3500CE1587 /* UICollectionViewDelta.swift */,
-				2D285C651AE34CA700CE1587 /* Delta.h */,
-				2D285C631AE34CA700CE1587 /* Supporting Files */,
 			);
-			path = Delta;
+			name = Sources;
+			path = sources;
 			sourceTree = "<group>";
 		};
-		2D285C631AE34CA700CE1587 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2D285C641AE34CA700CE1587 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		2D285C6F1AE34CA700CE1587 /* DeltaTests */ = {
+		2D09E0C91BC4BDC4002B95B9 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				2D285C8C1AE34DAF00CE1587 /* DeltaProcessorSpec.swift */,
-				2D285C701AE34CA700CE1587 /* Supporting Files */,
 			);
-			path = DeltaTests;
+			name = Tests;
+			path = tests;
 			sourceTree = "<group>";
 		};
-		2D285C701AE34CA700CE1587 /* Supporting Files */ = {
+		2D09E0CA1BC4BDCA002B95B9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2D285C711AE34CA700CE1587 /* Info.plist */,
+				2D285C651AE34CA700CE1587 /* Delta.h */,
+				2D09E0CC1BC4BDD7002B95B9 /* iOS */,
+				2D09E0E61BC4C2C7002B95B9 /* Mac */,
+				2D09E0CB1BC4BDD1002B95B9 /* Tests */,
 			);
 			name = "Supporting Files";
+			path = supporting_files;
 			sourceTree = "<group>";
 		};
-		2D285C8E1AE34DCD00CE1587 /* Frameworks */ = {
+		2D09E0CB1BC4BDD1002B95B9 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				2D285C8F1AE34DE100CE1587 /* Nimble.framework */,
-				2D285C901AE34DE100CE1587 /* Quick.framework */,
+				2D285C711AE34CA700CE1587 /* info.plist */,
 			);
-			name = Frameworks;
+			name = Tests;
+			path = tests;
+			sourceTree = "<group>";
+		};
+		2D09E0CC1BC4BDD7002B95B9 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2D285C641AE34CA700CE1587 /* info.plist */,
+			);
+			name = iOS;
+			path = ios;
+			sourceTree = "<group>";
+		};
+		2D09E0E61BC4C2C7002B95B9 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				2D09E0E21BC4C2C2002B95B9 /* info.plist */,
+			);
+			name = Mac;
+			path = mac;
+			sourceTree = "<group>";
+		};
+		2D285C561AE34CA700CE1587 = {
+			isa = PBXGroup;
+			children = (
+				2D09E0CD1BC4BEA8002B95B9 /* LICENSE */,
+				2D09E0CE1BC4BEA8002B95B9 /* README.md */,
+				2D09E0C81BC4BDBD002B95B9 /* Sources */,
+				2D09E0C91BC4BDC4002B95B9 /* Tests */,
+				2D09E0CA1BC4BDCA002B95B9 /* Supporting Files */,
+				2D285C8E1AE34DCD00CE1587 /* Vendor */,
+				2D285C611AE34CA700CE1587 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2D285C611AE34CA700CE1587 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2D285C601AE34CA700CE1587 /* Delta.framework */,
+				2D285C6B1AE34CA700CE1587 /* Tests.xctest */,
+				2D09E0DE1BC4C2C2002B95B9 /* Delta.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2D285C8E1AE34DCD00CE1587 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				2D09E0D11BC4BFFF002B95B9 /* Nimble.framework */,
+				2D09E0D21BC4BFFF002B95B9 /* Quick.framework */,
+			);
+			name = Vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		2D09E0DB1BC4C2C2002B95B9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D09E0E71BC4C364002B95B9 /* Delta.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2D285C5D1AE34CA700CE1587 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -173,27 +219,45 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2D285C5F1AE34CA700CE1587 /* Delta */ = {
+		2D09E0DD1BC4C2C2002B95B9 /* Mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D285C761AE34CA700CE1587 /* Build configuration list for PBXNativeTarget "Delta" */;
+			buildConfigurationList = 2D09E0E51BC4C2C2002B95B9 /* Build configuration list for PBXNativeTarget "Mac" */;
 			buildPhases = (
-				2D285C5B1AE34CA700CE1587 /* Sources */,
-				2D285C5C1AE34CA700CE1587 /* Frameworks */,
-				2D285C5D1AE34CA700CE1587 /* Headers */,
-				2D285C5E1AE34CA700CE1587 /* Resources */,
+				2D09E0D91BC4C2C2002B95B9 /* Sources */,
+				2D09E0DA1BC4C2C2002B95B9 /* Frameworks */,
+				2D09E0DB1BC4C2C2002B95B9 /* Headers */,
+				2D09E0DC1BC4C2C2002B95B9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Delta;
+			name = Mac;
+			productName = Delta;
+			productReference = 2D09E0DE1BC4C2C2002B95B9 /* Delta.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2D285C5F1AE34CA700CE1587 /* iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D285C761AE34CA700CE1587 /* Build configuration list for PBXNativeTarget "iOS" */;
+			buildPhases = (
+				2D285C5B1AE34CA700CE1587 /* Sources */,
+				2D285C5C1AE34CA700CE1587 /* Frameworks */,
+				2D285C5D1AE34CA700CE1587 /* Headers */,
+				2D09E0E91BC4C3D7002B95B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOS;
 			productName = Delta;
 			productReference = 2D285C601AE34CA700CE1587 /* Delta.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		2D285C6A1AE34CA700CE1587 /* DeltaTests */ = {
+		2D285C6A1AE34CA700CE1587 /* Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D285C791AE34CA700CE1587 /* Build configuration list for PBXNativeTarget "DeltaTests" */;
+			buildConfigurationList = 2D285C791AE34CA700CE1587 /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
 				2D285C671AE34CA700CE1587 /* Sources */,
 				2D285C681AE34CA700CE1587 /* Frameworks */,
@@ -205,9 +269,9 @@
 			dependencies = (
 				2D285C6E1AE34CA700CE1587 /* PBXTargetDependency */,
 			);
-			name = DeltaTests;
+			name = Tests;
 			productName = DeltaTests;
-			productReference = 2D285C6B1AE34CA700CE1587 /* DeltaTests.xctest */;
+			productReference = 2D285C6B1AE34CA700CE1587 /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -218,9 +282,12 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Flow;
 				TargetAttributes = {
+					2D09E0DD1BC4C2C2002B95B9 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
 					2D285C5F1AE34CA700CE1587 = {
 						CreatedOnToolsVersion = 6.3;
 					};
@@ -241,17 +308,27 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2D285C5F1AE34CA700CE1587 /* Delta */,
-				2D285C6A1AE34CA700CE1587 /* DeltaTests */,
+				2D285C5F1AE34CA700CE1587 /* iOS */,
+				2D09E0DD1BC4C2C2002B95B9 /* Mac */,
+				2D285C6A1AE34CA700CE1587 /* Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2D285C5E1AE34CA700CE1587 /* Resources */ = {
+		2D09E0DC1BC4C2C2002B95B9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D09E0E81BC4C36F002B95B9 /* LICENSE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D09E0E91BC4C3D7002B95B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D09E0EA1BC4C3DB002B95B9 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +342,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2D09E0D91BC4C2C2002B95B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D09E0EB1BC4C3FC002B95B9 /* DeltaProcessor.swift in Sources */,
+				2D09E0EC1BC4C3FC002B95B9 /* SectionedDataProcessor.swift in Sources */,
+				2D09E0ED1BC4C3FC002B95B9 /* DeltaRecord.swift in Sources */,
+				2D09E0EE1BC4C3FC002B95B9 /* DeltaCollectionRecord.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2D285C5B1AE34CA700CE1587 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,13 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D285C981AE43BDC00CE1587 /* UICollectionViewDelta.swift in Sources */,
-				2D0FC5961B0B273D004FE78C /* SectionedDataProcessor.swift in Sources */,
-				2D0FC5951B0B2734004FE78C /* DeltaCollectionRecord.swift in Sources */,
-				2D285C8B1AE34D9700CE1587 /* UITableViewDelta.swift in Sources */,
-				2D285C861AE34D4800CE1587 /* DeltaProcessor.swift in Sources */,
 				2D285C8D1AE34DAF00CE1587 /* DeltaProcessorSpec.swift in Sources */,
-				2D285C881AE34D4800CE1587 /* DeltaRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,12 +379,53 @@
 /* Begin PBXTargetDependency section */
 		2D285C6E1AE34CA700CE1587 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D285C5F1AE34CA700CE1587 /* Delta */;
+			target = 2D285C5F1AE34CA700CE1587 /* iOS */;
 			targetProxy = 2D285C6D1AE34CA700CE1587 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		2D09E0E31BC4C2C2002B95B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/mac/info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.getflow.delta;
+				PRODUCT_NAME = Delta;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2D09E0E41BC4C2C2002B95B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/mac/info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.getflow.delta;
+				PRODUCT_NAME = Delta;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		2D285C741AE34CA700CE1587 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -325,6 +448,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -340,7 +464,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -382,7 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -396,15 +520,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Delta/Info.plist;
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/ios/info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier:lower)";
+				PRODUCT_NAME = Delta;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -418,12 +545,15 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Delta/Info.plist;
+				GCC_OPTIMIZATION_LEVEL = fast;
+				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/ios/info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier:lower)";
+				PRODUCT_NAME = Delta;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -431,7 +561,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
@@ -439,8 +568,9 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = DeltaTests/Info.plist;
+				INFOPLIST_FILE = supporting_files/tests/info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier:lower)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -449,12 +579,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = DeltaTests/Info.plist;
+				INFOPLIST_FILE = supporting_files/tests/info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier:lower)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -462,6 +592,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2D09E0E51BC4C2C2002B95B9 /* Build configuration list for PBXNativeTarget "Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D09E0E31BC4C2C2002B95B9 /* Debug */,
+				2D09E0E41BC4C2C2002B95B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		2D285C5A1AE34CA700CE1587 /* Build configuration list for PBXProject "Delta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -471,7 +609,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D285C761AE34CA700CE1587 /* Build configuration list for PBXNativeTarget "Delta" */ = {
+		2D285C761AE34CA700CE1587 /* Build configuration list for PBXNativeTarget "iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D285C771AE34CA700CE1587 /* Debug */,
@@ -480,7 +618,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D285C791AE34CA700CE1587 /* Build configuration list for PBXNativeTarget "DeltaTests" */ = {
+		2D285C791AE34CA700CE1587 /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D285C7A1AE34CA700CE1587 /* Debug */,

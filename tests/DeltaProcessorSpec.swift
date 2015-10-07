@@ -1,6 +1,7 @@
 import Foundation
 import Quick
 import Nimble
+@testable import Delta
 
 class DeltaProcessorSpec: QuickSpec {
 

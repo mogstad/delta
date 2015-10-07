@@ -1,7 +1,4 @@
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-//! Project version number for Delta.
 FOUNDATION_EXPORT double DeltaVersionNumber;
-
-//! Project version string for Delta.
 FOUNDATION_EXPORT const unsigned char DeltaVersionString[];

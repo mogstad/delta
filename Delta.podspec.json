@@ -2,8 +2,7 @@
   "name": "Delta",
   "version": "2.0.1",
   "license": "MIT",
-  "summary": "Delta produces a set of records to transform a ordered set of data into
-another.",
+  "summary": "Delta produces a set of records to transform a ordered set of data into another.",
   "homepage": "https://github.com/mogstad/delta",
   "authors": {
     "Bjarne Mogstad": "me@mogstad.co"

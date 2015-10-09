@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D09E0DD1BC4C2C2002B95B9"
-               BuildableName = "Mac.framework"
+               BuildableName = "Delta.framework"
                BlueprintName = "Mac"
                ReferencedContainer = "container:Delta.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D09E0DD1BC4C2C2002B95B9"
-            BuildableName = "Mac.framework"
+            BuildableName = "Delta.framework"
             BlueprintName = "Mac"
             ReferencedContainer = "container:Delta.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D09E0DD1BC4C2C2002B95B9"
-            BuildableName = "Mac.framework"
+            BuildableName = "Delta.framework"
             BlueprintName = "Mac"
             ReferencedContainer = "container:Delta.xcodeproj">
          </BuildableReference>

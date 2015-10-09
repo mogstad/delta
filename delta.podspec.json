@@ -2,7 +2,8 @@
   "name": "Delta",
   "version": "2.0.1",
   "license": "MIT",
-  "summary": "",
+  "summary": "Delta produces a set of records to transform a ordered set of data into
+another.",
   "homepage": "https://github.com/mogstad/delta",
   "authors": {
     "Bjarne Mogstad": "me@mogstad.co"
@@ -17,7 +18,7 @@
   },
   "source_files": "sources/**/*.swift",
   "osx": {
-    "exclude_files": "soruces/*{UI}*"
+    "exclude_files": "sources/**/UI*"
   },
   "requires_arc": true
 }

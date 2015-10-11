@@ -55,11 +55,9 @@ public class DeltaProcessor<T: Hashable> {
   private func moved(fromCache: DeltaCache, toCache: DeltaCache) -> [Record] {
     var delta = 0
     var processed: [Int: Int] = Dictionary()
-
-    let _ = self.createIndexCache(self.from)
-    var toIndexCache = self.createIndexCache(self.to)
-
     var records: [Record] = []
+
+    var toIndexCache = self.createIndexCache(self.to)
 
     for (index, item) in self.to.enumerate() {
       while true {

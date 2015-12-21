@@ -14,19 +14,26 @@
 		2D09E0E71BC4C364002B95B9 /* Delta.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D285C651AE34CA700CE1587 /* Delta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2D09E0E81BC4C36F002B95B9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2D09E0CD1BC4BEA8002B95B9 /* LICENSE */; };
 		2D09E0EA1BC4C3DB002B95B9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2D09E0CD1BC4BEA8002B95B9 /* LICENSE */; };
-		2D09E0EB1BC4C3FC002B95B9 /* DeltaProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C831AE34D4800CE1587 /* DeltaProcessor.swift */; };
-		2D09E0EC1BC4C3FC002B95B9 /* SectionedDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0FC5931B0B2661004FE78C /* SectionedDataProcessor.swift */; };
-		2D09E0ED1BC4C3FC002B95B9 /* DeltaRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C841AE34D4800CE1587 /* DeltaRecord.swift */; };
-		2D09E0EE1BC4C3FC002B95B9 /* DeltaCollectionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0FC5911B0A27AC004FE78C /* DeltaCollectionRecord.swift */; };
-		2D0FC5921B0A27AC004FE78C /* DeltaCollectionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0FC5911B0A27AC004FE78C /* DeltaCollectionRecord.swift */; };
-		2D0FC5941B0B2661004FE78C /* SectionedDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0FC5931B0B2661004FE78C /* SectionedDataProcessor.swift */; };
+		2D09E0ED1BC4C3FC002B95B9 /* delta_change.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C841AE34D4800CE1587 /* delta_change.swift */; };
+		2D11738B1BD3C02D0047DAE9 /* delta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D11738A1BD3C02D0047DAE9 /* delta.swift */; };
+		2D11738C1BD3C02D0047DAE9 /* delta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D11738A1BD3C02D0047DAE9 /* delta.swift */; };
+		2D11738E1BD3CCB10047DAE9 /* delta_spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D11738D1BD3CCB10047DAE9 /* delta_spec.swift */; };
+		2D1173911BD3D9420047DAE9 /* collection_record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1173901BD3D9420047DAE9 /* collection_record.swift */; };
+		2D1173921BD3D9420047DAE9 /* collection_record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1173901BD3D9420047DAE9 /* collection_record.swift */; };
+		2D1EAFCC1BEF8221006AA9A0 /* processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EAFCB1BEF8221006AA9A0 /* processor.swift */; };
+		2D1EAFCD1BEF8221006AA9A0 /* processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EAFCB1BEF8221006AA9A0 /* processor.swift */; };
 		2D285C661AE34CA700CE1587 /* Delta.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D285C651AE34CA700CE1587 /* Delta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2D285C6C1AE34CA700CE1587 /* Delta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D285C601AE34CA700CE1587 /* Delta.framework */; };
-		2D285C851AE34D4800CE1587 /* DeltaProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C831AE34D4800CE1587 /* DeltaProcessor.swift */; };
-		2D285C871AE34D4800CE1587 /* DeltaRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C841AE34D4800CE1587 /* DeltaRecord.swift */; };
+		2D285C871AE34D4800CE1587 /* delta_change.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C841AE34D4800CE1587 /* delta_change.swift */; };
 		2D285C8A1AE34D9700CE1587 /* UITableViewDelta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C891AE34D9700CE1587 /* UITableViewDelta.swift */; };
-		2D285C8D1AE34DAF00CE1587 /* DeltaProcessorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C8C1AE34DAF00CE1587 /* DeltaProcessorSpec.swift */; };
+		2D285C8D1AE34DAF00CE1587 /* processor_spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C8C1AE34DAF00CE1587 /* processor_spec.swift */; };
 		2D285C971AE43A3500CE1587 /* UICollectionViewDelta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C961AE43A3500CE1587 /* UICollectionViewDelta.swift */; };
+		2D9DA0321BD66B1E00DCFBF1 /* cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9DA0311BD66B1E00DCFBF1 /* cache.swift */; };
+		2D9DA0331BD66B1E00DCFBF1 /* cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9DA0311BD66B1E00DCFBF1 /* cache.swift */; };
+		2DA6FB4F1BCB0FC10072F645 /* delta_item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6FB4E1BCB0FC10072F645 /* delta_item.swift */; };
+		2DA6FB501BCB0FC10072F645 /* delta_item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6FB4E1BCB0FC10072F645 /* delta_item.swift */; };
+		2DA6FB521BCB10190072F645 /* delta_section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6FB511BCB10190072F645 /* delta_section.swift */; };
+		2DA6FB531BCB10190072F645 /* delta_section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6FB511BCB10190072F645 /* delta_section.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,18 +68,22 @@
 		2D09E0D21BC4BFFF002B95B9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		2D09E0DE1BC4C2C2002B95B9 /* Delta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Delta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D09E0E21BC4C2C2002B95B9 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
-		2D0FC5911B0A27AC004FE78C /* DeltaCollectionRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeltaCollectionRecord.swift; sourceTree = "<group>"; };
-		2D0FC5931B0B2661004FE78C /* SectionedDataProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionedDataProcessor.swift; sourceTree = "<group>"; };
+		2D11738A1BD3C02D0047DAE9 /* delta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = delta.swift; sourceTree = "<group>"; };
+		2D11738D1BD3CCB10047DAE9 /* delta_spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = delta_spec.swift; sourceTree = "<group>"; };
+		2D1173901BD3D9420047DAE9 /* collection_record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collection_record.swift; sourceTree = "<group>"; };
+		2D1EAFCB1BEF8221006AA9A0 /* processor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = processor.swift; sourceTree = "<group>"; };
 		2D285C601AE34CA700CE1587 /* Delta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Delta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D285C641AE34CA700CE1587 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		2D285C651AE34CA700CE1587 /* Delta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Delta.h; sourceTree = "<group>"; };
 		2D285C6B1AE34CA700CE1587 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D285C711AE34CA700CE1587 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
-		2D285C831AE34D4800CE1587 /* DeltaProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeltaProcessor.swift; sourceTree = "<group>"; };
-		2D285C841AE34D4800CE1587 /* DeltaRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeltaRecord.swift; sourceTree = "<group>"; };
+		2D285C841AE34D4800CE1587 /* delta_change.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = delta_change.swift; sourceTree = "<group>"; };
 		2D285C891AE34D9700CE1587 /* UITableViewDelta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewDelta.swift; sourceTree = "<group>"; };
-		2D285C8C1AE34DAF00CE1587 /* DeltaProcessorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeltaProcessorSpec.swift; sourceTree = "<group>"; };
+		2D285C8C1AE34DAF00CE1587 /* processor_spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = processor_spec.swift; sourceTree = "<group>"; };
 		2D285C961AE43A3500CE1587 /* UICollectionViewDelta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewDelta.swift; sourceTree = "<group>"; };
+		2D9DA0311BD66B1E00DCFBF1 /* cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cache.swift; sourceTree = "<group>"; };
+		2DA6FB4E1BCB0FC10072F645 /* delta_item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = delta_item.swift; sourceTree = "<group>"; };
+		2DA6FB511BCB10190072F645 /* delta_section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = delta_section.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,12 +117,11 @@
 		2D09E0C81BC4BDBD002B95B9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2D285C831AE34D4800CE1587 /* DeltaProcessor.swift */,
-				2D0FC5931B0B2661004FE78C /* SectionedDataProcessor.swift */,
-				2D285C841AE34D4800CE1587 /* DeltaRecord.swift */,
-				2D0FC5911B0A27AC004FE78C /* DeltaCollectionRecord.swift */,
-				2D285C891AE34D9700CE1587 /* UITableViewDelta.swift */,
-				2D285C961AE43A3500CE1587 /* UICollectionViewDelta.swift */,
+				2D1173881BD300560047DAE9 /* Data Structures */,
+				2D1173891BD300600047DAE9 /* Extensions */,
+				2D11738A1BD3C02D0047DAE9 /* delta.swift */,
+				2D9DA0311BD66B1E00DCFBF1 /* cache.swift */,
+				2D1EAFCB1BEF8221006AA9A0 /* processor.swift */,
 			);
 			name = Sources;
 			path = sources;
@@ -120,7 +130,8 @@
 		2D09E0C91BC4BDC4002B95B9 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				2D285C8C1AE34DAF00CE1587 /* DeltaProcessorSpec.swift */,
+				2D285C8C1AE34DAF00CE1587 /* processor_spec.swift */,
+				2D11738D1BD3CCB10047DAE9 /* delta_spec.swift */,
 			);
 			name = Tests;
 			path = tests;
@@ -163,6 +174,28 @@
 			);
 			name = Mac;
 			path = mac;
+			sourceTree = "<group>";
+		};
+		2D1173881BD300560047DAE9 /* Data Structures */ = {
+			isa = PBXGroup;
+			children = (
+				2D285C841AE34D4800CE1587 /* delta_change.swift */,
+				2DA6FB4E1BCB0FC10072F645 /* delta_item.swift */,
+				2DA6FB511BCB10190072F645 /* delta_section.swift */,
+				2D1173901BD3D9420047DAE9 /* collection_record.swift */,
+			);
+			name = "Data Structures";
+			path = data_structures;
+			sourceTree = "<group>";
+		};
+		2D1173891BD300600047DAE9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2D285C891AE34D9700CE1587 /* UITableViewDelta.swift */,
+				2D285C961AE43A3500CE1587 /* UICollectionViewDelta.swift */,
+			);
+			name = Extensions;
+			path = extensions;
 			sourceTree = "<group>";
 		};
 		2D285C561AE34CA700CE1587 = {
@@ -346,10 +379,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D09E0EB1BC4C3FC002B95B9 /* DeltaProcessor.swift in Sources */,
-				2D09E0EC1BC4C3FC002B95B9 /* SectionedDataProcessor.swift in Sources */,
-				2D09E0ED1BC4C3FC002B95B9 /* DeltaRecord.swift in Sources */,
-				2D09E0EE1BC4C3FC002B95B9 /* DeltaCollectionRecord.swift in Sources */,
+				2D11738C1BD3C02D0047DAE9 /* delta.swift in Sources */,
+				2D1EAFCD1BEF8221006AA9A0 /* processor.swift in Sources */,
+				2D09E0ED1BC4C3FC002B95B9 /* delta_change.swift in Sources */,
+				2D1173921BD3D9420047DAE9 /* collection_record.swift in Sources */,
+				2DA6FB501BCB0FC10072F645 /* delta_item.swift in Sources */,
+				2D9DA0331BD66B1E00DCFBF1 /* cache.swift in Sources */,
+				2DA6FB531BCB10190072F645 /* delta_section.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,12 +393,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D0FC5921B0A27AC004FE78C /* DeltaCollectionRecord.swift in Sources */,
-				2D285C851AE34D4800CE1587 /* DeltaProcessor.swift in Sources */,
-				2D285C871AE34D4800CE1587 /* DeltaRecord.swift in Sources */,
-				2D0FC5941B0B2661004FE78C /* SectionedDataProcessor.swift in Sources */,
+				2D1EAFCC1BEF8221006AA9A0 /* processor.swift in Sources */,
+				2D11738B1BD3C02D0047DAE9 /* delta.swift in Sources */,
+				2D285C871AE34D4800CE1587 /* delta_change.swift in Sources */,
+				2D1173911BD3D9420047DAE9 /* collection_record.swift in Sources */,
+				2DA6FB4F1BCB0FC10072F645 /* delta_item.swift in Sources */,
+				2DA6FB521BCB10190072F645 /* delta_section.swift in Sources */,
 				2D285C971AE43A3500CE1587 /* UICollectionViewDelta.swift in Sources */,
 				2D285C8A1AE34D9700CE1587 /* UITableViewDelta.swift in Sources */,
+				2D9DA0321BD66B1E00DCFBF1 /* cache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +409,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D285C8D1AE34DAF00CE1587 /* DeltaProcessorSpec.swift in Sources */,
+				2D285C8D1AE34DAF00CE1587 /* processor_spec.swift in Sources */,
+				2D11738E1BD3CCB10047DAE9 /* delta_spec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +639,7 @@
 				2D09E0E41BC4C2C2002B95B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2D285C5A1AE34CA700CE1587 /* Build configuration list for PBXProject "Delta" */ = {
 			isa = XCConfigurationList;

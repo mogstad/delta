@@ -10,7 +10,7 @@
 ///   view using an actual cell. Defaults to `true`.
 /// - returns: the required changes required to change the passed in `from`
 ///   array into the passed in `to` array.
-public func generateItemRecordsForSection<Item: DeltaItem where Item: Equatable>(section: Int, oldSection: Int, from: [Item], to: [Item], preferReload: Bool = true) -> [CollectionRecord] {
+public func generateItemRecords<Item: DeltaItem where Item: Equatable>(section section: Int, oldSection: Int? = nil, from: [Item], to: [Item], preferReload: Bool = true) -> [CollectionRecord] {
   if from.count == 0 && to.count == 0 {
     return []
   } else if preferReload && (from.count == 0 || to.count == 0) {
@@ -18,7 +18,7 @@ public func generateItemRecordsForSection<Item: DeltaItem where Item: Equatable>
   }
 
   return changes(from: from, to: to).map {
-    $0.toCollectionItemRecord(section: section, oldSection: oldSection)
+    $0.toCollectionItemRecord(section: section, oldSection: oldSection ?? section)
   }
 }
 
@@ -29,7 +29,7 @@ public func generateItemRecordsForSection<Item: DeltaItem where Item: Equatable>
 /// - returns: the required changes to perform on the old nested data structure
 ///   to end up with the new data structure.
 public func generateRecordsForSections<Section: DeltaSection where Section: Equatable>(from from: [Section], to: [Section]) -> [CollectionRecord] {
-  return generateItemRecordsForSections(from: from, to: to) + generateSectionRecords(from: from, to: to)
+  return generateItemRecords(from: from, to: to) + generateSectionRecords(from: from, to: to)
 }
 
 /// Generates CollectionRecords for sections
@@ -56,13 +56,14 @@ func generateSectionRecords<Section: DeltaSection where Section: Equatable>(from
 /// - parameter from: the original data structure.
 /// - parameter to: the new data structure.
 /// - returns: all item records to transform the `from` data structure into the `to` data structure.
-func generateItemRecordsForSections<Section: DeltaSection where Section: Equatable>(from from: [Section], to: [Section]) -> [CollectionRecord] {
+func generateItemRecords<Section: DeltaSection where Section: Equatable>(from from: [Section], to: [Section]) -> [CollectionRecord] {
   let cache = createItemCache(items: from)
 
   let itemRecords = to.enumerate().flatMap { (index, section) -> [CollectionRecord] in
     guard let cacheEntry = cache[section.deltaIdentifier] else { return [] }
 
-    return generateItemRecordsForSection(index,
+    return generateItemRecords(
+      section: index,
       oldSection: cacheEntry.index,
       from: cacheEntry.item.items,
       to: to[index].items)

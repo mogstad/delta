@@ -38,7 +38,10 @@ func ==(lhs: TaskListItem, rhs: TaskListItem) -> Bool {
 We can then figure out the difference between two ordered set of our models.
 
 ```swift
-let records = generateItemRecordsForSection(0, from: from, to: to)
+let records = generateItemRecords(
+  section: 0, 
+  from: from, 
+  to: to)
 ```
 
 We can use those records to animate a table view or a collection view:

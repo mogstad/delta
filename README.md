@@ -95,7 +95,7 @@ releases will be available, but bug fixes won’t be issued.
 
 ### [Carthage](https://github.com/carthage/carthage)
 
-1. Add `github "mogstad/delta" ~> 2.0.0` to your “Cartfile”
+1. Add `github "mogstad/delta" ~> 3.0.0` to your “Cartfile”
 2. Run `carthage update`
 3. Link Delta with your target
 4. Add Delta to your copy framework script phase
@@ -105,7 +105,7 @@ releases will be available, but bug fixes won’t be issued.
 Update your podfile:
 
 1. Add `use_frameworks!` to your pod file[^1]
-2. Add `pod "Delta", "~> 2.0.0"` to your application target
+2. Add `pod "Delta", "~> 3.0.0"` to your application target
 3. Update your dependencies by running `pod install`
 
 [^1]: Swift can’t be included as a static library, therefor it’s required to add

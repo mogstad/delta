@@ -1,7 +1,7 @@
 # Delta
 
 [![Build Status](https://img.shields.io/circleci/project/mogstad/delta.svg?style=flat-square)](https://circleci.com/gh/mogstad/delta)
-[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/Delta.svg?style=flat-square)](https://cocoapods.org/pods/Delta)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Delta.svg?style=flat-square)](https://cocoapods.org/pods/Delta)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
 
 Handling animations and keeping track of changes manually can be very error-prone,

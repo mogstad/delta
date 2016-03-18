@@ -55,7 +55,8 @@ func generateSectionRecords<Section: DeltaSection where Section: Equatable>(from
 ///
 /// - parameter from: the original data structure.
 /// - parameter to: the new data structure.
-/// - returns: all item records to transform the `from` data structure into the `to` data structure.
+/// - returns: all item records to transform the `from` data structure into the
+///   `to` data structure.
 func generateItemRecords<Section: DeltaSection where Section: Equatable>(from from: [Section], to: [Section]) -> [CollectionRecord] {
   let cache = createItemCache(items: from)
 

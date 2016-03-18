@@ -28,6 +28,7 @@
 		2D285C8A1AE34D9700CE1587 /* UITableViewDelta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C891AE34D9700CE1587 /* UITableViewDelta.swift */; };
 		2D285C8D1AE34DAF00CE1587 /* processor_spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C8C1AE34DAF00CE1587 /* processor_spec.swift */; };
 		2D285C971AE43A3500CE1587 /* UICollectionViewDelta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C961AE43A3500CE1587 /* UICollectionViewDelta.swift */; };
+		2D525E2A1C9CAE0A00F76207 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 2D525E291C9CAE0A00F76207 /* CHANGELOG.md */; };
 		2D9DA0321BD66B1E00DCFBF1 /* cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9DA0311BD66B1E00DCFBF1 /* cache.swift */; };
 		2D9DA0331BD66B1E00DCFBF1 /* cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9DA0311BD66B1E00DCFBF1 /* cache.swift */; };
 		2DA6FB4F1BCB0FC10072F645 /* delta_item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6FB4E1BCB0FC10072F645 /* delta_item.swift */; };
@@ -81,6 +82,7 @@
 		2D285C891AE34D9700CE1587 /* UITableViewDelta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewDelta.swift; sourceTree = "<group>"; };
 		2D285C8C1AE34DAF00CE1587 /* processor_spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = processor_spec.swift; sourceTree = "<group>"; };
 		2D285C961AE43A3500CE1587 /* UICollectionViewDelta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewDelta.swift; sourceTree = "<group>"; };
+		2D525E291C9CAE0A00F76207 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		2D9DA0311BD66B1E00DCFBF1 /* cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cache.swift; sourceTree = "<group>"; };
 		2DA6FB4E1BCB0FC10072F645 /* delta_item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = delta_item.swift; sourceTree = "<group>"; };
 		2DA6FB511BCB10190072F645 /* delta_section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = delta_section.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				2D09E0CD1BC4BEA8002B95B9 /* LICENSE */,
 				2D09E0CE1BC4BEA8002B95B9 /* README.md */,
+				2D525E291C9CAE0A00F76207 /* CHANGELOG.md */,
 				2D09E0C81BC4BDBD002B95B9 /* Sources */,
 				2D09E0C91BC4BDC4002B95B9 /* Tests */,
 				2D09E0CA1BC4BDCA002B95B9 /* Supporting Files */,
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D1EAFCC1BEF8221006AA9A0 /* processor.swift in Sources */,
+				2D525E2A1C9CAE0A00F76207 /* CHANGELOG.md in Sources */,
 				2D11738B1BD3C02D0047DAE9 /* delta.swift in Sources */,
 				2D285C871AE34D4800CE1587 /* delta_change.swift in Sources */,
 				2D1173911BD3D9420047DAE9 /* collection_record.swift in Sources */,

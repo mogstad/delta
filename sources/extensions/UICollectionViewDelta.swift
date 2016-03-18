@@ -4,6 +4,15 @@ public extension UICollectionView {
   
   public typealias CollectionViewUpdateCallback = (NSIndexPath, NSIndexPath) -> Void
 
+  /// Perform updates on the collection view.
+  ///
+  /// - parameter records: Array of `CollectionRecord` to perform on the 
+  ///   collection view.
+  /// - parameter update: An update callback that will be invoked for each 
+  ///   update record. It will be invoked with the old and the new index path.
+  ///   Note: due to internals in UITableView’s and UICollecitonView’s we need
+  ///   to query the cell using the old index path, and update the cell with 
+  ///   data from the new index path.
   public func performUpdates(records: [CollectionRecord], update: CollectionViewUpdateCallback? = nil) {
     self.performBatchUpdates({
       for record in records {

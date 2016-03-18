@@ -2,6 +2,13 @@
 
 `Delta` adheres to [Semantic Versioning](http://semver.org/).
 
+## Unpublished
+
+### Added
+
+- Added inline documentation for most of the public function, enums, and 
+  protocols. “Getting started” guide and examples are next on the list.
+
 ## [3.0.0] - 2016-03-18
 
 ### Changed

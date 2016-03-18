@@ -15,7 +15,10 @@
     "ios": "8.0",
     "osx": "10.9"
   },
-  "source_files": "sources/**/*.swift",
+  "source_files": [
+    "sources/**/*.swift",
+    "sources/*.swift"
+  ],
   "osx": {
     "exclude_files": "sources/**/UI*"
   },

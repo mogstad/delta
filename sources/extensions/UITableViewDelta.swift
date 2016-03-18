@@ -14,9 +14,9 @@ public extension UITableView {
       case let .RemoveItem(section, index):
         let indexPath = NSIndexPath(forRow: index, inSection: section)
         self.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-      case let .MoveItem(section, index, from):
-        let indexPath = NSIndexPath(forRow: index, inSection: section)
-        let fromIndexPath = NSIndexPath(forRow: from, inSection: section)
+      case let .MoveItem(from, to):
+        let indexPath = NSIndexPath(forRow: to.index, inSection: to.section)
+        let fromIndexPath = NSIndexPath(forRow: from.index, inSection: from.section)
         self.moveRowAtIndexPath(fromIndexPath, toIndexPath: indexPath)
       case let .ChangeItem(section, index, from):
         let indexPath = NSIndexPath(forRow: index, inSection: section)

@@ -1,6 +1,7 @@
 /// Generates item records in a given section
 ///
 /// - parameter section: the section
+/// - parameter oldSection: the index the section was originally located
 /// - parameter from: the original data structure.
 /// - parameter to: the new data structure.
 /// - parameter preferReload: wheter it should generate a reload record, if 
@@ -9,14 +10,16 @@
 ///   view using an actual cell. Defaults to `true`.
 /// - returns: the required changes required to change the passed in `from`
 ///   array into the passed in `to` array.
-public func generateItemRecordsForSection<Item: DeltaItem where Item: Equatable>(section: Int, from: [Item], to: [Item], preferReload: Bool = true) -> [CollectionRecord] {
+public func generateItemRecordsForSection<Item: DeltaItem where Item: Equatable>(section: Int, oldSection: Int, from: [Item], to: [Item], preferReload: Bool = true) -> [CollectionRecord] {
   if from.count == 0 && to.count == 0 {
     return []
   } else if preferReload && (from.count == 0 || to.count == 0) {
     return [.ReloadSection(section: section)]
   }
 
-  return changes(from: from, to: to).map { $0.toCollectionItemRecord(section: section) }
+  return changes(from: from, to: to).map {
+    $0.toCollectionItemRecord(section: section, oldSection: oldSection)
+  }
 }
 
 /// Generate section records and item records for many sections.
@@ -57,9 +60,11 @@ func generateItemRecordsForSections<Section: DeltaSection where Section: Equatab
   let cache = createItemCache(items: from)
 
   let itemRecords = to.enumerate().flatMap { (index, section) -> [CollectionRecord] in
-    guard let fromSection = cache[section.deltaIdentifier]?.item else { return [] }
+    guard let cacheEntry = cache[section.deltaIdentifier] else { return [] }
+
     return generateItemRecordsForSection(index,
-      from: fromSection.items,
+      oldSection: cacheEntry.index,
+      from: cacheEntry.item.items,
       to: to[index].items)
   }
   return itemRecords

@@ -1,8 +1,10 @@
+public typealias CollectionItem = (section: Int, index: Int)
+
 public enum CollectionRecord: Equatable {
 
   case AddItem(section: Int, index: Int)
   case RemoveItem(section: Int, index: Int)
-  case MoveItem(section: Int, index: Int, from: Int)
+  case MoveItem(from: CollectionItem, to: CollectionItem)
   case ChangeItem(section: Int, index: Int, from: Int)
 
   case AddSection(section: Int)
@@ -18,8 +20,13 @@ public func ==(lhs: CollectionRecord, rhs: CollectionRecord) -> Bool {
       return lhsSection == rhsSection && lhsIndex == rhsIndex
     case (let .RemoveItem(lhsSection, lhsIndex), let .RemoveItem(rhsSection, rhsIndex)):
       return lhsSection == rhsSection && lhsIndex == rhsIndex
-    case (let .MoveItem(lhsSection, lhsIndex, lhsFrom), let .MoveItem(rhsSection, rhsIndex, rhsFrom)):
-      return lhsSection == rhsSection && lhsIndex == rhsIndex && lhsFrom == rhsFrom
+    case (let .MoveItem(lhsFrom, lhsTo), let .MoveItem(rhsFrom, rhsTo)):
+      return (
+        lhsFrom.section == rhsFrom.section &&
+        lhsFrom.index == rhsFrom.index &&
+        lhsTo.section == rhsTo.section &&
+        lhsTo.index == rhsTo.index)
+
     case (let .ChangeItem(lhsSection, lhsIndex, lhsFrom), let .ChangeItem(rhsSection, rhsIndex, rhsFrom)):
       return lhsSection == rhsSection && lhsIndex == rhsIndex && lhsFrom == rhsFrom
 
@@ -53,14 +60,16 @@ extension DeltaChange {
     }
   }
 
-  func toCollectionItemRecord(section section: Int) -> CollectionRecord {
+  func toCollectionItemRecord(section section: Int, oldSection: Int) -> CollectionRecord {
     switch self {
     case let .Add(index):
       return .AddItem(section: section, index: index)
     case let .Remove(index):
       return .RemoveItem(section: section, index: index)
     case let .Move(index, from):
-      return .MoveItem(section: section, index: index, from: from)
+      return .MoveItem(
+        from: (section: oldSection, index: from),
+        to: (section: section, index: index))
     case let .Change(index, from):
       return .ChangeItem(section: section, index: index, from: from)
     }

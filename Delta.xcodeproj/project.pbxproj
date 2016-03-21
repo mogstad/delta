@@ -28,7 +28,6 @@
 		2D285C8A1AE34D9700CE1587 /* UITableViewDelta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C891AE34D9700CE1587 /* UITableViewDelta.swift */; };
 		2D285C8D1AE34DAF00CE1587 /* processor_spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C8C1AE34DAF00CE1587 /* processor_spec.swift */; };
 		2D285C971AE43A3500CE1587 /* UICollectionViewDelta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D285C961AE43A3500CE1587 /* UICollectionViewDelta.swift */; };
-		2D525E2A1C9CAE0A00F76207 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 2D525E291C9CAE0A00F76207 /* CHANGELOG.md */; };
 		2D9DA0321BD66B1E00DCFBF1 /* cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9DA0311BD66B1E00DCFBF1 /* cache.swift */; };
 		2D9DA0331BD66B1E00DCFBF1 /* cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9DA0311BD66B1E00DCFBF1 /* cache.swift */; };
 		2DA6FB4F1BCB0FC10072F645 /* delta_item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6FB4E1BCB0FC10072F645 /* delta_item.swift */; };
@@ -397,7 +396,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D1EAFCC1BEF8221006AA9A0 /* processor.swift in Sources */,
-				2D525E2A1C9CAE0A00F76207 /* CHANGELOG.md in Sources */,
 				2D11738B1BD3C02D0047DAE9 /* delta.swift in Sources */,
 				2D285C871AE34D4800CE1587 /* delta_change.swift in Sources */,
 				2D1173911BD3D9420047DAE9 /* collection_record.swift in Sources */,

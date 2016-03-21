@@ -2,7 +2,7 @@ import UIKit
 
 public extension UICollectionView {
   
-  public typealias CollectionViewUpdateCallback = (NSIndexPath, NSIndexPath) -> Void
+  public typealias CollectionViewUpdateCallback = (from: NSIndexPath, to: NSIndexPath) -> Void
 
   /// Perform updates on the collection view.
   ///
@@ -27,13 +27,13 @@ public extension UICollectionView {
           let indexPath = NSIndexPath(forRow: to.index, inSection: to.section)
           let fromIndexPath = NSIndexPath(forRow: from.index, inSection: from.section)
           self.moveItemAtIndexPath(fromIndexPath, toIndexPath: indexPath)
-        case let .ChangeItem(section, index, from):
-          let indexPath = NSIndexPath(forRow: index, inSection: section)
+        case let .ChangeItem(from, to):
+          let fromIndexPath = NSIndexPath(forRow: from.index, inSection: from.section)
           if let updateCallback = update {
-            let newIndexPath = NSIndexPath(forRow: from, inSection: section)
-            updateCallback(indexPath, newIndexPath)
+            let toIndexPath = NSIndexPath(forRow: to.index, inSection: to.section)
+            updateCallback(from: fromIndexPath, to: toIndexPath)
           } else {
-            self.reloadItemsAtIndexPaths([indexPath])
+            self.reloadItemsAtIndexPaths([fromIndexPath])
           }
         case let .ReloadSection(section):
           self.reloadSections(NSIndexSet(index: section))

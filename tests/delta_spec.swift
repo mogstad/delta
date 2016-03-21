@@ -218,6 +218,41 @@ class SectionedDeltaProcessorSpec: QuickSpec {
           }
         }
 
+        describe("Change records with section changes") {
+          beforeEach {
+            let from = [
+              Section(identifier: 1, items: [
+                Model(identifier: 512, count: 2),
+                ])
+            ]
+
+            let to = [
+              Section(identifier: 0, items: [Model(identifier: 64)]),
+              Section(identifier: 1, items: [
+                Model(identifier: 512, count: 4),
+                ]),
+            ]
+            records = generateRecordsForSections(from: from, to: to)
+          }
+
+          it("generates records") {
+            expect(records.count).to(equal(2))
+          }
+
+          it("adds section") {
+            let record = CollectionRecord.AddSection(section: 0)
+            expect(records[1]).to(equal(record))
+          }
+
+          it("creates change record") {
+            let record = CollectionRecord.ChangeItem(
+              from: (section: 0, index: 0),
+              to: (section: 1, index: 0))
+
+            expect(records[0]).to(equal(record))
+          }
+        }
+
         describe("Moving items and adding section") {
           beforeEach {
             let from = [

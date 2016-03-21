@@ -17,10 +17,22 @@ public enum DeltaChange: Equatable {
   /// - parameter index: The new index of the item
   /// - parameter from: The old index of the item
   case Move(index: Int, from: Int)
+
+  /// An item has changed. Due to internals in some UI components, we need to 
+  /// know where the item was before the all applied changes.
+  ///
+  /// - parameter index: The index of the item, in the new dataset.
+  /// - parameter from: The index of the item, in the old dataset.
   case Change(index: Int, from: Int)
 }
 
-/// Equatable conformation, only here to make it easier to test.
+/// Returns whether the two `DeltaChange` records are equal.
+///
+/// - note: Mostly here to make it easier to write tests.
+///
+/// - parameter lhs: The left-hand side value to compare
+/// - parameter rhs: The Right-hand side value to compare
+/// - returns: Returns `true` iff `lhs` is identical to `rhs`.
 public func ==(lhs: DeltaChange, rhs: DeltaChange) -> Bool {
   switch (lhs, rhs) {
   case (let .Add(lhsIndex), let .Add(rhsIndex)):
@@ -69,7 +81,9 @@ extension DeltaChange {
         from: (section: oldSection, index: from),
         to: (section: section, index: index))
     case let .Change(index, from):
-      return .ChangeItem(section: section, index: index, from: from)
+      return .ChangeItem(
+        from: (section: oldSection, index: from),
+        to: (section: section, index: index))
     }
   }
 
@@ -77,6 +91,8 @@ extension DeltaChange {
 
 extension DeltaChange: CustomStringConvertible {
 
+  /// The textual representation used when written to an output stream, which 
+  /// includes the name of enum case, and its associated values.
   public var description: String {
     switch self {
     case let .Add(index):

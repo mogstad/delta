@@ -2,7 +2,7 @@ import UIKit
 
 public extension UITableView {
 
-  public typealias TableViewUpdateCallback = (NSIndexPath, NSIndexPath) -> Void
+  public typealias TableViewUpdateCallback = (from: NSIndexPath, to: NSIndexPath) -> Void
 
   /// Perform updates on the table view.
   ///
@@ -27,13 +27,13 @@ public extension UITableView {
         let indexPath = NSIndexPath(forRow: to.index, inSection: to.section)
         let fromIndexPath = NSIndexPath(forRow: from.index, inSection: from.section)
         self.moveRowAtIndexPath(fromIndexPath, toIndexPath: indexPath)
-      case let .ChangeItem(section, index, from):
-        let indexPath = NSIndexPath(forRow: index, inSection: section)
-        let newIndexPath = NSIndexPath(forRow: from, inSection: section)
+      case let .ChangeItem(from, to):
+        let indexPath = NSIndexPath(forRow: to.index, inSection: to.section)
+        let fromIndexPath = NSIndexPath(forRow: from.index, inSection: from.section)
         if let updateCallback = update {
-          updateCallback(indexPath, newIndexPath)
+          updateCallback(from: fromIndexPath, to: indexPath)
         } else {
-          self.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+          self.reloadRowsAtIndexPaths([fromIndexPath], withRowAnimation: .Automatic)
         }
       case let .ReloadSection(section):
         self.reloadSections(NSIndexSet(index: section), withRowAnimation: .Automatic)

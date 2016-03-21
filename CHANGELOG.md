@@ -2,6 +2,12 @@
 
 `Delta` adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+
+- Return correct `from` index path in update callback.  
+
 ## [3.0.1] - 2016-03-19
 
 ### Added

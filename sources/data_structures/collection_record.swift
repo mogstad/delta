@@ -28,14 +28,25 @@ public enum CollectionRecord: Equatable {
   /// - parameter to: A tuple, with the section and the index of the item, 
   ///   where it’s move to.
   case MoveItem(from: CollectionItem, to: CollectionItem)
-  case ChangeItem(section: Int, index: Int, from: Int)
 
-  /// Section is added
+  /// Describes that an item has been changed. Its identifier is equal, but the 
+  /// model’s equality test fails. Due to internals in Apple’s display classes, 
+  /// it’s required to query for the old cell with the original index path, and
+  /// update it with data from the new index path.
+  ///
+  /// - parameter from: A tuple, with the section and the index of the item
+  ///   where it used to be. Depending on the UI implementation, you might want 
+  ///   to query the cell with these values.
+  /// - parameter to: A tuple, with the section and the index of the item,
+  ///   where it’s ended up being. Use these values to query your data.
+  case ChangeItem(from: CollectionItem, to: CollectionItem)
+
+  /// Describes that a section is to be added.
   /// 
   /// - parameter section: Index of the newly inserted section.
   case AddSection(section: Int)
 
-  /// Describes that a section is moved.
+  /// Describes that a section is to be moved.
   ///
   /// - parameter section: Index of the sections new location.
   /// - parameter from: Index where the section used to be located.
@@ -56,7 +67,13 @@ public enum CollectionRecord: Equatable {
 
 }
 
-/// Equatable conformation, only here to make it easier to test.
+/// Returns whether the two `CollectionRecord` records are equal.
+///
+/// - note: Mostly here to make it easier to write tests.
+///
+/// - parameter lhs: The left-hand side value to compare
+/// - parameter rhs: The Right-hand side value to compare
+/// - returns: Returns `true` iff `lhs` is identical to `rhs`.
 public func ==(lhs: CollectionRecord, rhs: CollectionRecord) -> Bool {
     switch (lhs, rhs) {
     case (let .AddItem(lhsSection, lhsIndex), let .AddItem(rhsSection, rhsIndex)):
@@ -70,8 +87,12 @@ public func ==(lhs: CollectionRecord, rhs: CollectionRecord) -> Bool {
         lhsTo.section == rhsTo.section &&
         lhsTo.index == rhsTo.index)
 
-    case (let .ChangeItem(lhsSection, lhsIndex, lhsFrom), let .ChangeItem(rhsSection, rhsIndex, rhsFrom)):
-      return lhsSection == rhsSection && lhsIndex == rhsIndex && lhsFrom == rhsFrom
+    case (let .ChangeItem(lhsFrom, lhsTo), let .ChangeItem(rhsFrom, rhsTo)):
+      return (
+        lhsFrom.section == rhsFrom.section &&
+        lhsFrom.index == rhsFrom.index &&
+        lhsTo.section == rhsTo.section &&
+        lhsTo.index == rhsTo.index)
 
     case (let .AddSection(lhsIndex), let .AddSection(rhsIndex)):
       return lhsIndex == rhsIndex

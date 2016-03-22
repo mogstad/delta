@@ -60,8 +60,8 @@ extension DeltaChange {
       return .RemoveSection(section: index)
     case let .Move(index, from):
       return .MoveSection(section: index, from: from)
-    case let .Change(index, _):
-      return .ReloadSection(section: index)
+    case let .Change(_, from):
+      return .ReloadSection(section: from)
     }
   }
 

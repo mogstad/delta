@@ -2,6 +2,13 @@
 
 `Delta` adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unpublished]
+
+### Fixed
+
+- Fix issue where Change’s `from` and `to` arguments was assigned opposite,
+  resulting in cascading issues.
+
 ## [4.0.0] - 2016-03-22
 
 ### Added

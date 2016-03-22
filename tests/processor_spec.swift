@@ -64,6 +64,32 @@ class DeltaProcessorSpec: QuickSpec {
         }
       }
 
+      describe("Changing a node and removing a node") {
+        beforeEach {
+          let from = [
+            Model(identifier: 0),
+            Model(identifier: 1, count: 10)
+          ]
+
+          let to = [
+            Model(identifier: 1, count: 5)
+          ]
+
+          records = self.records(from, to: to)
+          expect(records.count).to(equal(2))
+        }
+
+        it("creates “remove” record") {
+          let record = DeltaChange.Remove(index: 0)
+          expect(records[0]).to(equal(record))
+        }
+
+        it("creates “change” record") {
+          let record = DeltaChange.Change(index: 0, from: 1)
+          expect(records[1]).to(equal(record))
+        }
+      }
+
       describe("Removing and adding") {
         beforeEach {
           let from = [Model(identifier: 16) ,Model(identifier: 64), Model(identifier: 32)]

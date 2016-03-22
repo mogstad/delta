@@ -22,7 +22,7 @@ func changes<Item: DeltaItem where Item: Equatable>(from from: [Item], to: [Item
     return from.enumerate().flatMap { (index, item) -> DeltaChange? in
       if let cacheEntry = toCache[item.deltaIdentifier] {
         if cacheEntry.item != item {
-          return .Change(index: index, from: cacheEntry.index)
+          return .Change(index: cacheEntry.index, from: index)
         }
         return nil
       }

@@ -76,6 +76,8 @@ func changes<Item: DeltaItem where Item: Equatable>(from from: [Item], to: [Item
 
   let fromCache = createItemCache(items: from)
   let toCache = createItemCache(items: to)
+  precondition(fromCache.count == from.count, "Multiple models with the same `deltaIdentifier` found in the passed in sequence `from`")
+  precondition(toCache.count == to.count, "Multiple models with the same `deltaIdentifier` found in the passed in sequence `to`")
 
   return removed(from, toCache: toCache) +
     added(to, fromCache: fromCache) +

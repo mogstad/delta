@@ -4,6 +4,11 @@
 
 ## [Unreleased]
 
+### Added
+
+- Precondition making sure that multiple objects with the same identifier isn’t
+  passed into delta.
+
 ### Fixed
 
 - Return correct `from` index path in update callback.  

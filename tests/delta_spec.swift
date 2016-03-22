@@ -253,6 +253,41 @@ class SectionedDeltaProcessorSpec: QuickSpec {
           }
         }
 
+        describe("Change records combined with remove item in same section") {
+          beforeEach {
+            let from = [
+              Section(identifier: 1, items: [
+                Model(identifier: 64),
+                Model(identifier: 512, count: 2)
+              ])
+            ]
+
+            let to = [
+              Section(identifier: 1, items: [
+                Model(identifier: 512, count: 1)
+              ])
+            ]
+            records = generateRecordsForSections(from: from, to: to)
+          }
+
+          it("generates records") {
+            expect(records.count).to(equal(2))
+          }
+
+          it("removes item") {
+            let record = CollectionRecord.RemoveItem(section: 0, index: 0)
+            expect(records[0]).to(equal(record))
+          }
+
+          it("creates change record") {
+            let record = CollectionRecord.ChangeItem(
+              from: (section: 0, index: 1),
+              to: (section: 0, index: 0))
+
+            expect(records[1]).to(equal(record))
+          }
+        }
+
         describe("Moving items and adding section") {
           beforeEach {
             let from = [

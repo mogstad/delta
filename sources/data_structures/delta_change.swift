@@ -75,7 +75,7 @@ extension DeltaChange {
     case let .Add(index):
       return .AddItem(section: section, index: index)
     case let .Remove(index):
-      return .RemoveItem(section: section, index: index)
+      return .RemoveItem(section: oldSection, index: index)
     case let .Move(index, from):
       return .MoveItem(
         from: (section: oldSection, index: from),

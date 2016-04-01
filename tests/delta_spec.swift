@@ -288,6 +288,72 @@ class SectionedDeltaProcessorSpec: QuickSpec {
           }
         }
 
+        describe("Adding section and removing item") {
+          beforeEach {
+            let from = [
+              Section(identifier: 1, items: [
+                Model(identifier: 512),
+                Model(identifier: 2048)
+              ])
+            ]
+
+            let to = [
+              Section(identifier: 0, items: [Model(identifier: 64)]),
+              Section(identifier: 1, items: [
+                Model(identifier: 512),
+              ]),
+            ]
+            records = generateRecordsForSections(from: from, to: to)
+          }
+
+          it("generates records") {
+            expect(records.count).to(equal(2))
+          }
+
+          it("created add section record") {
+            let record = CollectionRecord.AddSection(section: 0)
+            expect(records[1]).to(equal(record))
+          }
+
+          it("creates remove item record") {
+            let record = CollectionRecord.RemoveItem(section: 0, index: 1)
+            expect(records[0]).to(equal(record))
+          }
+        }
+
+        describe("Removing section and removing item") {
+          beforeEach {
+            let from = [
+              Section(identifier: 0, items: [Model(identifier: 64)]),
+              Section(identifier: 1, items: [
+                Model(identifier: 512),
+                Model(identifier: 2048)
+                ])
+            ]
+
+            let to = [
+              Section(identifier: 1, items: [
+                Model(identifier: 512),
+                ]),
+            ]
+            records = generateRecordsForSections(from: from, to: to)
+          }
+
+          it("generates records") {
+            expect(records.count).to(equal(2))
+          }
+
+          it("created add section record") {
+            let record = CollectionRecord.RemoveSection(section: 0)
+            expect(records[1]).to(equal(record))
+          }
+
+          it("creates remove item record") {
+            let record = CollectionRecord.RemoveItem(section: 1, index: 1)
+            expect(records[0]).to(equal(record))
+          }
+        }
+
         describe("Moving items and adding section") {
           beforeEach {
             let from = [

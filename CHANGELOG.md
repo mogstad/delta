@@ -2,6 +2,12 @@
 
 `Delta` adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unpublished]
+
+### Fixed
+
+- Resolve issue where `RemoveItem` record could use the incorrect section.
+
 ## [4.0.1] - 2016-03-22
 
 ### Fixed

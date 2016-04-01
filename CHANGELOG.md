@@ -2,7 +2,7 @@
 
 `Delta` adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unpublished]
+## [4.0.2] - 2016-04-01
 
 ### Fixed
 

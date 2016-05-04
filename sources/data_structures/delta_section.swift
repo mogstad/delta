@@ -5,7 +5,7 @@
 /// section as well. E.g. If your data is grouped by days, the identifier can be
 /// a `NSDateComponent` with the year, month, and day compnents.
 public protocol DeltaSection: DeltaItem {
-  typealias Item: DeltaItem, Equatable
+  associatedtype Item: DeltaItem, Equatable
 
   /// Array of `DeltaItem`s in the section.
   var items: [Item] { get }

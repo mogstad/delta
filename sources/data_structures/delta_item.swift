@@ -5,7 +5,7 @@
 /// equal, a change record is generated instead of a remove and add change 
 /// record.
 public protocol DeltaItem {
-  typealias DeltaIdentifier: Hashable
+  associatedtype DeltaIdentifier: Hashable
 
   /// Identifier to detemine if the data is the same or just changed. This is 
   /// typically the remote identifier of the item. If you implement this 

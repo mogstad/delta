@@ -108,3 +108,27 @@ public func ==(lhs: CollectionRecord, rhs: CollectionRecord) -> Bool {
     }
 
 }
+
+extension CollectionRecord: CustomDebugStringConvertible {
+  public var debugDescription: String {
+    switch self {
+    case .AddItem(section: let section, index: let index):
+      return "AddItem: \(section),\(index)"
+    case .RemoveItem(section: let section, index: let index):
+      return "RemoveItem: \(section),\(index)"
+    case .MoveItem(from: let from, to: let to):
+      return "MoveItem: from \(from.section),\(from.index) to \(to.section),\(to.index)"
+    case .ChangeItem(from: let from, to: let to):
+      return "ChangeItem: from \(from.section),\(from.index) to \(to.section),\(to.index)"
+    case .AddSection(section: let section):
+      return "AddSection: \(section)"
+    case .MoveSection(section: let from, from: let to):
+      return "MoveSection: from \(from) to \(to)"
+    case .RemoveSection(section: let section):
+      return "RemoveSection: \(section)"
+    case .ReloadSection(section: let section):
+      return "ReloadSection: \(section)"
+    }
+  }
+}
+

@@ -1,2 +1,2 @@
-github "Quick/Quick"
-github "ikesyo/Nimble" "better-xcode8-support"
+github "Quick/Quick" ~> 0.10.0
+github "Quick/Nimble" ~> 5.0.0

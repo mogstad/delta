@@ -31,7 +31,7 @@ class DeltaProcessorSpec: QuickSpec {
         }
 
         it("creates “add” record") {
-          let record = DeltaChange.Add(index: 1)
+          let record = DeltaChange.add(index: 1)
           expect(records[0]).to(equal(record))
         }
       }
@@ -45,7 +45,7 @@ class DeltaProcessorSpec: QuickSpec {
         }
 
         it("creates “remove” record") {
-          let record = DeltaChange.Remove(index: 1)
+          let record = DeltaChange.remove(index: 1)
           expect(records[0]).to(equal(record))
         }
       }
@@ -59,7 +59,7 @@ class DeltaProcessorSpec: QuickSpec {
         }
 
         it("creates “change” record") {
-          let record = DeltaChange.Change(index: 0, from: 0)
+          let record = DeltaChange.change(index: 0, from: 0)
           expect(records[0]).to(equal(record))
         }
       }
@@ -80,12 +80,12 @@ class DeltaProcessorSpec: QuickSpec {
         }
 
         it("creates “remove” record") {
-          let record = DeltaChange.Remove(index: 0)
+          let record = DeltaChange.remove(index: 0)
           expect(records[0]).to(equal(record))
         }
 
         it("creates “change” record") {
-          let record = DeltaChange.Change(index: 0, from: 1)
+          let record = DeltaChange.change(index: 0, from: 1)
           expect(records[1]).to(equal(record))
         }
       }
@@ -99,12 +99,12 @@ class DeltaProcessorSpec: QuickSpec {
         }
 
         it("creates “remove” record") {
-          let record = DeltaChange.Remove(index: 1)
+          let record = DeltaChange.remove(index: 1)
           expect(records[0]).to(equal(record))
         }
 
         it("creates “add” record") {
-          let record = DeltaChange.Add(index: 1)
+          let record = DeltaChange.add(index: 1)
           expect(records[1]).to(equal(record))
         }
       }
@@ -118,7 +118,7 @@ class DeltaProcessorSpec: QuickSpec {
         }
 
         it("creates “move” record") {
-          let record = DeltaChange.Move(index: 2, from: 1)
+          let record = DeltaChange.move(index: 2, from: 1)
           expect(records[0]).to(equal(record))
         }
 
@@ -148,9 +148,9 @@ class DeltaProcessorSpec: QuickSpec {
 
         it("moves the record") {
 
-          let record = DeltaChange.Move(index: 2, from: 1)
-          let record1 = DeltaChange.Move(index: 5, from: 2)
-          let record2 = DeltaChange.Move(index: 4, from: 4)
+          let record = DeltaChange.move(index: 2, from: 1)
+          let record1 = DeltaChange.move(index: 5, from: 2)
+          let record2 = DeltaChange.move(index: 4, from: 4)
 
           expect(records[0]).to(equal(record))
           expect(records[1]).to(equal(record1))
@@ -178,7 +178,7 @@ class DeltaProcessorSpec: QuickSpec {
         }
 
         it("moves the record") {
-          let record = DeltaChange.Move(index: 3, from: 1)
+          let record = DeltaChange.move(index: 3, from: 1)
           expect(records[1]).to(equal(record))
         }
       }
@@ -202,14 +202,14 @@ class DeltaProcessorSpec: QuickSpec {
         }
 
         it("moves the record") {
-          let record = DeltaChange.Move(index: 2, from: 2)
+          let record = DeltaChange.move(index: 2, from: 2)
           expect(records[1]).to(equal(record))
         }
       }
     }
   }
 
-  private func records(from: [Model], to: [Model]) -> [DeltaChange] {
+  fileprivate func records(_ from: [Model], to: [Model]) -> [DeltaChange] {
     return changes(from: from, to: to)
   }
 

@@ -211,7 +211,9 @@
 				2D285C8E1AE34DCD00CE1587 /* Vendor */,
 				2D285C611AE34CA700CE1587 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		2D285C611AE34CA700CE1587 /* Products */ = {
 			isa = PBXGroup;

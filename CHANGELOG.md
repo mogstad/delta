@@ -2,6 +2,10 @@
 
 `Delta` adheres to [Semantic Versioning](http://semver.org/).
 
+## [5.0.0] - 2018-03-28
+
+- Compatibility for Swift 4.0
+
 ## [4.0.2] - 2016-04-01
 
 ### Fixed

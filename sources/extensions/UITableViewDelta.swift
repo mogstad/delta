@@ -2,7 +2,7 @@ import UIKit
 
 public extension UITableView {
 
-  public typealias TableViewUpdateCallback = (from: NSIndexPath, to: NSIndexPath) -> Void
+  public typealias TableViewUpdateCallback = (_ from: IndexPath, _ to: IndexPath) -> Void
 
   /// Perform updates on the table view.
   ///
@@ -13,35 +13,35 @@ public extension UITableView {
   ///   Note: due to internals in UITableView’s and UICollecitonView’s we need
   ///   to query the cell using the old index path, and update the cell with
   ///   data from the new index path.
-  public func performUpdates(records: [CollectionRecord], update: TableViewUpdateCallback? = nil) {
+  public func performUpdates(_ records: [CollectionRecord], update: TableViewUpdateCallback? = nil) {
     var changeRecords: [CollectionRecord] = []
 
     self.beginUpdates()
     for record in records {
       switch record {
-      case let .AddItem(section, index):
-        let indexPath = NSIndexPath(forRow: index, inSection: section)
-        self.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-      case let .RemoveItem(section, index):
-        let indexPath = NSIndexPath(forRow: index, inSection: section)
-        self.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-      case let .MoveItem(from, to):
-        let indexPath = NSIndexPath(forRow: to.index, inSection: to.section)
-        let fromIndexPath = NSIndexPath(forRow: from.index, inSection: from.section)
-        self.moveRowAtIndexPath(fromIndexPath, toIndexPath: indexPath)
-      case let .ChangeItem(_, _):
+      case let .addItem(section, index):
+        let indexPath = IndexPath(row: index, section: section)
+        self.insertRows(at: [indexPath], with: .automatic)
+      case let .removeItem(section, index):
+        let indexPath = IndexPath(row: index, section: section)
+        self.deleteRows(at: [indexPath], with: .automatic)
+      case let .moveItem(from, to):
+        let indexPath = IndexPath(row: to.index, section: to.section)
+        let fromIndexPath = IndexPath(row: from.index, section: from.section)
+        self.moveRow(at: fromIndexPath, to: indexPath)
+      case .changeItem(_, _):
         // A Move & Reload for a single cell cannot occur within the same 
         // update block (Causes a UIKit exception,) so we queue up the 
         // reloads to occur after all of the insertions
         changeRecords.append(record)
-      case let .ReloadSection(section):
-        self.reloadSections(NSIndexSet(index: section), withRowAnimation: .Automatic)
-      case let .MoveSection(section, from):
+      case let .reloadSection(section):
+        self.reloadSections(IndexSet(integer: section), with: .automatic)
+      case let .moveSection(section, from):
         self.moveSection(from, toSection: section)
-      case let .AddSection(section):
-        self.insertSections(NSIndexSet(index: section), withRowAnimation: .Automatic)
-      case let .RemoveSection(section):
-        self.deleteSections(NSIndexSet(index: section), withRowAnimation: .Automatic)
+      case let .addSection(section):
+        self.insertSections(IndexSet(integer: section), with: .automatic)
+      case let .removeSection(section):
+        self.deleteSections(IndexSet(integer: section), with: .automatic)
       }
     }
     self.endUpdates()
@@ -49,16 +49,16 @@ public extension UITableView {
     if changeRecords.count > 0 {
       self.beginUpdates()
       for record in changeRecords {
-        guard case let .ChangeItem(from, to) = record else {
-          return fatalError("changeRecords can contain only .ChangeItem, not \(record)")
+        guard case let .changeItem(from, to) = record else {
+          fatalError("changeRecords can contain only .ChangeItem, not \(record)")
         }
 
-        let indexPath = NSIndexPath(forRow: to.index, inSection: to.section)
-        let fromIndexPath = NSIndexPath(forRow: from.index, inSection: from.section)
+        let indexPath = IndexPath(row: to.index, section: to.section)
+        let fromIndexPath = IndexPath(row: from.index, section: from.section)
         if let updateCallback = update {
-          updateCallback(from: fromIndexPath, to: indexPath)
+          updateCallback(fromIndexPath, indexPath)
         } else {
-          self.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+          self.reloadRows(at: [indexPath], with: .automatic)
         }
       }
       self.endUpdates()

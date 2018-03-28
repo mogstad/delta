@@ -10,11 +10,11 @@
 ///   view using an actual cell. Defaults to `true`.
 /// - returns: the required changes required to change the passed in `from`
 ///   array into the passed in `to` array.
-public func generateItemRecords<Item: DeltaItem where Item: Equatable>(section section: Int, oldSection: Int? = nil, from: [Item], to: [Item], preferReload: Bool = true) -> [CollectionRecord] {
+public func generateItemRecords<Item: DeltaItem>(section: Int, oldSection: Int? = nil, from: [Item], to: [Item], preferReload: Bool = true) -> [CollectionRecord] where Item: Equatable {
   if from.count == 0 && to.count == 0 {
     return []
   } else if preferReload && (from.count == 0 || to.count == 0) {
-    return [.ReloadSection(section: section)]
+    return [.reloadSection(section: section)]
   }
 
   return changes(from: from, to: to).map {
@@ -28,7 +28,7 @@ public func generateItemRecords<Item: DeltaItem where Item: Equatable>(section s
 /// - parameter to: the new data structure.
 /// - returns: the required changes to perform on the old nested data structure
 ///   to end up with the new data structure.
-public func generateRecordsForSections<Section: DeltaSection where Section: Equatable>(from from: [Section], to: [Section]) -> [CollectionRecord] {
+public func generateRecordsForSections<Section: DeltaSection>(from: [Section], to: [Section]) -> [CollectionRecord] where Section: Equatable {
   return generateItemRecords(from: from, to: to) + generateSectionRecords(from: from, to: to)
 }
 
@@ -38,11 +38,11 @@ public func generateRecordsForSections<Section: DeltaSection where Section: Equa
 /// - parameter to: the new data structure.
 /// - returns: the required changes required to change the passed in `from` 
 ///   array into the passed in `to` array.
-func generateSectionRecords<Section: DeltaSection where Section: Equatable>(from from: [Section], to: [Section]) -> [CollectionRecord] {
+func generateSectionRecords<Section: DeltaSection>(from: [Section], to: [Section]) -> [CollectionRecord] where Section: Equatable {
   let records = changes(from: from, to: to)
   let recordsWithoutChange = records.filter { record in
     switch record {
-    case .Change(_):
+    case .change(_):
       return false
     default:
       return true
@@ -57,10 +57,10 @@ func generateSectionRecords<Section: DeltaSection where Section: Equatable>(from
 /// - parameter to: the new data structure.
 /// - returns: all item records to transform the `from` data structure into the
 ///   `to` data structure.
-func generateItemRecords<Section: DeltaSection where Section: Equatable>(from from: [Section], to: [Section]) -> [CollectionRecord] {
+func generateItemRecords<Section: DeltaSection>(from: [Section], to: [Section]) -> [CollectionRecord] where Section: Equatable {
   let cache = createItemCache(items: from)
 
-  let itemRecords = to.enumerate().flatMap { (index, section) -> [CollectionRecord] in
+  let itemRecords = to.enumerated().flatMap { (index, section) -> [CollectionRecord] in
     guard let cacheEntry = cache[section.deltaIdentifier] else { return [] }
 
     return generateItemRecords(

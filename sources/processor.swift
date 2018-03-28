@@ -5,37 +5,37 @@
 /// - parameter to: the new data structure.
 /// - returns: the required changes required to change the passed in `from`
 ///   array into the passed in `to` array.
-func changes<Item: DeltaItem where Item: Equatable>(from from: [Item], to: [Item]) -> [DeltaChange] {
+func changes<Item: DeltaItem>(from: [Item], to: [Item]) -> [DeltaChange] where Item: Equatable {
 
   typealias DeltaCache = [Item.DeltaIdentifier: (index: Int, item: Item)]
 
-  func added(to: [Item], fromCache: DeltaCache) -> [DeltaChange] {
-    return to.enumerate().flatMap { (index, element) -> DeltaChange? in
+  func added(_ to: [Item], fromCache: DeltaCache) -> [DeltaChange] {
+    return to.enumerated().flatMap { (index, element) -> DeltaChange? in
       if fromCache[element.deltaIdentifier] == nil {
-        return .Add(index: index)
+        return .add(index: index)
       }
       return nil
     }
   }
 
-  func removed(from: [Item], toCache: DeltaCache) -> [DeltaChange] {
-    return from.enumerate().flatMap { (index, item) -> DeltaChange? in
+  func removed(_ from: [Item], toCache: DeltaCache) -> [DeltaChange] {
+    return from.enumerated().flatMap { (index, item) -> DeltaChange? in
       if let cacheEntry = toCache[item.deltaIdentifier] {
         if cacheEntry.item != item {
-          return .Change(index: cacheEntry.index, from: index)
+          return .change(index: cacheEntry.index, from: index)
         }
         return nil
       }
-      return .Remove(index: index)
+      return .remove(index: index)
     }
   }
 
-  func moved(from: [Item], to: [Item], fromCache: DeltaCache, toCache: DeltaCache) -> [DeltaChange] {
+  func moved(_ from: [Item], to: [Item], fromCache: DeltaCache, toCache: DeltaCache) -> [DeltaChange] {
     var delta = 0
     var processed: [Int: Int] = Dictionary()
     var records: [DeltaChange] = []
 
-    for (index, item) in to.enumerate() {
+    for (index, item) in to.enumerated() {
       while true {
         if processed[index] != nil {
           delta -= 1
@@ -64,7 +64,7 @@ func changes<Item: DeltaItem where Item: Equatable>(from from: [Item], to: [Item
           delta += 1
           let finalIndex = toCache[compareIdentifer]!.index
           processed[finalIndex] = index
-          records.append(.Move(index: finalIndex, from: compareIndex))
+          records.append(.move(index: finalIndex, from: compareIndex))
           continue
         }
         break

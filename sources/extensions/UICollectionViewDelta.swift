@@ -2,7 +2,7 @@ import UIKit
 
 public extension UICollectionView {
   
-  public typealias CollectionViewUpdateCallback = (from: NSIndexPath, to: NSIndexPath) -> Void
+  public typealias CollectionViewUpdateCallback = (_ from: IndexPath, _ to: IndexPath) -> Void
 
   /// Perform updates on the collection view.
   ///
@@ -13,36 +13,36 @@ public extension UICollectionView {
   ///   Note: due to internals in UITableView’s and UICollecitonView’s we need
   ///   to query the cell using the old index path, and update the cell with 
   ///   data from the new index path.
-  public func performUpdates(records: [CollectionRecord], update: CollectionViewUpdateCallback? = nil) {
+  public func performUpdates(_ records: [CollectionRecord], update: CollectionViewUpdateCallback? = nil) {
     self.performBatchUpdates({
       for record in records {
         switch record {
-        case let .AddItem(section, index):
-          let indexPath = NSIndexPath(forRow: index, inSection: section)
-          self.insertItemsAtIndexPaths([indexPath])
-        case let .RemoveItem(section, index):
-          let indexPath = NSIndexPath(forRow: index, inSection: section)
-          self.deleteItemsAtIndexPaths([indexPath])
-        case let .MoveItem(from, to):
-          let indexPath = NSIndexPath(forRow: to.index, inSection: to.section)
-          let fromIndexPath = NSIndexPath(forRow: from.index, inSection: from.section)
-          self.moveItemAtIndexPath(fromIndexPath, toIndexPath: indexPath)
-        case let .ChangeItem(from, to):
-          let fromIndexPath = NSIndexPath(forRow: from.index, inSection: from.section)
+        case let .addItem(section, index):
+          let indexPath = IndexPath(row: index, section: section)
+          self.insertItems(at: [indexPath])
+        case let .removeItem(section, index):
+          let indexPath = IndexPath(row: index, section: section)
+          self.deleteItems(at: [indexPath])
+        case let .moveItem(from, to):
+          let indexPath = IndexPath(row: to.index, section: to.section)
+          let fromIndexPath = IndexPath(row: from.index, section: from.section)
+          self.moveItem(at: fromIndexPath, to: indexPath)
+        case let .changeItem(from, to):
+          let fromIndexPath = IndexPath(row: from.index, section: from.section)
           if let updateCallback = update {
-            let toIndexPath = NSIndexPath(forRow: to.index, inSection: to.section)
-            updateCallback(from: fromIndexPath, to: toIndexPath)
+            let toIndexPath = IndexPath(row: to.index, section: to.section)
+            updateCallback(fromIndexPath, toIndexPath)
           } else {
-            self.reloadItemsAtIndexPaths([fromIndexPath])
+            self.reloadItems(at: [fromIndexPath])
           }
-        case let .ReloadSection(section):
-          self.reloadSections(NSIndexSet(index: section))
-        case let .MoveSection(section, from):
+        case let .reloadSection(section):
+          self.reloadSections(IndexSet(integer: section))
+        case let .moveSection(section, from):
           self.moveSection(from, toSection: section)
-        case let .AddSection(section):
-          self.insertSections(NSIndexSet(index: section))
-        case let .RemoveSection(section):
-          self.deleteSections(NSIndexSet(index: section))
+        case let .addSection(section):
+          self.insertSections(IndexSet(integer: section))
+        case let .removeSection(section):
+          self.deleteSections(IndexSet(integer: section))
         }
       }
     }, completion: nil)

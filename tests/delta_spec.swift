@@ -37,7 +37,7 @@ class SectionedDeltaProcessorSpec: QuickSpec {
           }
           it("works") {
             expect(records.count).to(equal(1))
-            let record = CollectionRecord.AddSection(section: 1)
+            let record = CollectionRecord.addSection(section: 1)
             expect(records[0]).to(equal(record))
           }
         }
@@ -54,7 +54,7 @@ class SectionedDeltaProcessorSpec: QuickSpec {
           }
           it("works") {
             expect(records.count).to(equal(1))
-            let record = CollectionRecord.AddItem(section: 0, index: 1)
+            let record = CollectionRecord.addItem(section: 0, index: 1)
             expect(records[0]).to(equal(record))
           }
 
@@ -70,7 +70,7 @@ class SectionedDeltaProcessorSpec: QuickSpec {
           }
           it("reloads section when its models is or was null") {
             expect(records.count).to(equal(1))
-            let record = CollectionRecord.ReloadSection(section: 1)
+            let record = CollectionRecord.reloadSection(section: 1)
             expect(records[0]).to(equal(record))
           }
         }
@@ -95,7 +95,7 @@ class SectionedDeltaProcessorSpec: QuickSpec {
           }
           it("removes section") {
             expect(records.count).to(equal(1))
-            let record = CollectionRecord.RemoveSection(section: 1)
+            let record = CollectionRecord.removeSection(section: 1)
             expect(records[0]).to(equal(record))
           }
         }
@@ -111,7 +111,7 @@ class SectionedDeltaProcessorSpec: QuickSpec {
           }
           it("moves section") {
             expect(records.count).to(equal(1))
-            let record = CollectionRecord.MoveSection(section: 1, from: 0)
+            let record = CollectionRecord.moveSection(section: 1, from: 0)
             expect(records[0]).to(equal(record))
           }
         }
@@ -141,12 +141,12 @@ class SectionedDeltaProcessorSpec: QuickSpec {
           }
 
           it("removes section") {
-            let record = CollectionRecord.RemoveSection(section: 0)
+            let record = CollectionRecord.removeSection(section: 0)
             expect(records[1]).to(equal(record))
           }
 
           it("adds item record") {
-            let record = CollectionRecord.AddItem(section: 0, index: 1)
+            let record = CollectionRecord.addItem(section: 0, index: 1)
             expect(records[0]).to(equal(record))
           }
         }
@@ -172,12 +172,12 @@ class SectionedDeltaProcessorSpec: QuickSpec {
           }
 
           it("adds section") {
-            let record = CollectionRecord.AddSection(section: 0)
+            let record = CollectionRecord.addSection(section: 0)
             expect(records[1]).to(equal(record))
           }
 
           it("adds item record") {
-            let record = CollectionRecord.AddItem(section: 1, index: 1)
+            let record = CollectionRecord.addItem(section: 1, index: 1)
             expect(records[0]).to(equal(record))
           }
         }
@@ -205,12 +205,12 @@ class SectionedDeltaProcessorSpec: QuickSpec {
           }
 
           it("removes section") {
-            let record = CollectionRecord.RemoveSection(section: 0)
+            let record = CollectionRecord.removeSection(section: 0)
             expect(records[1]).to(equal(record))
           }
 
           it("creates move record") {
-            let record = CollectionRecord.MoveItem(
+            let record = CollectionRecord.moveItem(
               from: (section: 1, index: 0),
               to: (section: 0, index: 1))
 
@@ -240,12 +240,12 @@ class SectionedDeltaProcessorSpec: QuickSpec {
           }
 
           it("adds section") {
-            let record = CollectionRecord.AddSection(section: 0)
+            let record = CollectionRecord.addSection(section: 0)
             expect(records[1]).to(equal(record))
           }
 
           it("creates change record") {
-            let record = CollectionRecord.ChangeItem(
+            let record = CollectionRecord.changeItem(
               from: (section: 0, index: 0),
               to: (section: 1, index: 0))
 
@@ -275,12 +275,12 @@ class SectionedDeltaProcessorSpec: QuickSpec {
           }
 
           it("removes item") {
-            let record = CollectionRecord.RemoveItem(section: 0, index: 0)
+            let record = CollectionRecord.removeItem(section: 0, index: 0)
             expect(records[0]).to(equal(record))
           }
 
           it("creates change record") {
-            let record = CollectionRecord.ChangeItem(
+            let record = CollectionRecord.changeItem(
               from: (section: 0, index: 1),
               to: (section: 0, index: 0))
 
@@ -311,12 +311,12 @@ class SectionedDeltaProcessorSpec: QuickSpec {
           }
 
           it("created add section record") {
-            let record = CollectionRecord.AddSection(section: 0)
+            let record = CollectionRecord.addSection(section: 0)
             expect(records[1]).to(equal(record))
           }
 
           it("creates remove item record") {
-            let record = CollectionRecord.RemoveItem(section: 0, index: 1)
+            let record = CollectionRecord.removeItem(section: 0, index: 1)
             expect(records[0]).to(equal(record))
           }
         }
@@ -344,12 +344,12 @@ class SectionedDeltaProcessorSpec: QuickSpec {
           }
 
           it("created add section record") {
-            let record = CollectionRecord.RemoveSection(section: 0)
+            let record = CollectionRecord.removeSection(section: 0)
             expect(records[1]).to(equal(record))
           }
 
           it("creates remove item record") {
-            let record = CollectionRecord.RemoveItem(section: 1, index: 1)
+            let record = CollectionRecord.removeItem(section: 1, index: 1)
             expect(records[0]).to(equal(record))
           }
         }
@@ -378,12 +378,12 @@ class SectionedDeltaProcessorSpec: QuickSpec {
           }
 
           it("adds section") {
-            let record = CollectionRecord.AddSection(section: 0)
+            let record = CollectionRecord.addSection(section: 0)
             expect(records[1]).to(equal(record))
           }
 
           it("creates move record") {
-            let record = CollectionRecord.MoveItem(
+            let record = CollectionRecord.moveItem(
               from: (section: 0, index: 0),
               to: (section: 1, index: 1))
 

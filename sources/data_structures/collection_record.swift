@@ -10,13 +10,13 @@ public enum CollectionRecord: Equatable {
   ///
   /// - parameter section: The section the item is added to.
   /// - parameter index: Index the item is added to.
-  case AddItem(section: Int, index: Int)
+  case addItem(section: Int, index: Int)
 
   /// Item is removed from an existing section.
   ///
   /// - parameter section: The section the item is removed from.
   /// - parameter index: Index the item is removed from.
-  case RemoveItem(section: Int, index: Int)
+  case removeItem(section: Int, index: Int)
 
   /// Describes that an item is moved in-between an existing section. Due to
   /// limitations with Delta, we don’t currently support creating move records 
@@ -27,7 +27,7 @@ public enum CollectionRecord: Equatable {
   ///   where it used to be.
   /// - parameter to: A tuple, with the section and the index of the item, 
   ///   where it’s move to.
-  case MoveItem(from: CollectionItem, to: CollectionItem)
+  case moveItem(from: CollectionItem, to: CollectionItem)
 
   /// Describes that an item has been changed. Its identifier is equal, but the 
   /// model’s equality test fails. Due to internals in Apple’s display classes, 
@@ -39,23 +39,23 @@ public enum CollectionRecord: Equatable {
   ///   to query the cell with these values.
   /// - parameter to: A tuple, with the section and the index of the item,
   ///   where it’s ended up being. Use these values to query your data.
-  case ChangeItem(from: CollectionItem, to: CollectionItem)
+  case changeItem(from: CollectionItem, to: CollectionItem)
 
   /// Describes that a section is to be added.
   /// 
   /// - parameter section: Index of the newly inserted section.
-  case AddSection(section: Int)
+  case addSection(section: Int)
 
   /// Describes that a section is to be moved.
   ///
   /// - parameter section: Index of the sections new location.
   /// - parameter from: Index where the section used to be located.
-  case MoveSection(section: Int, from: Int)
+  case moveSection(section: Int, from: Int)
 
   /// Describes that a section is to be removed.
   /// 
   /// - parameter section: Index of the section to remove.
-  case RemoveSection(section: Int)
+  case removeSection(section: Int)
 
   /// Describes a section that requires a reload. This is mainly needed when 
   /// using cells as empty states. As Delta won’t support multiple types of
@@ -63,7 +63,7 @@ public enum CollectionRecord: Equatable {
   /// record for the empty state.
   /// 
   /// - parameter section: Index of the section to reload
-  case ReloadSection(section: Int)
+  case reloadSection(section: Int)
 
 }
 
@@ -76,31 +76,31 @@ public enum CollectionRecord: Equatable {
 /// - returns: Returns `true` iff `lhs` is identical to `rhs`.
 public func ==(lhs: CollectionRecord, rhs: CollectionRecord) -> Bool {
     switch (lhs, rhs) {
-    case (let .AddItem(lhsSection, lhsIndex), let .AddItem(rhsSection, rhsIndex)):
+    case (let .addItem(lhsSection, lhsIndex), let .addItem(rhsSection, rhsIndex)):
       return lhsSection == rhsSection && lhsIndex == rhsIndex
-    case (let .RemoveItem(lhsSection, lhsIndex), let .RemoveItem(rhsSection, rhsIndex)):
+    case (let .removeItem(lhsSection, lhsIndex), let .removeItem(rhsSection, rhsIndex)):
       return lhsSection == rhsSection && lhsIndex == rhsIndex
-    case (let .MoveItem(lhsFrom, lhsTo), let .MoveItem(rhsFrom, rhsTo)):
+    case (let .moveItem(lhsFrom, lhsTo), let .moveItem(rhsFrom, rhsTo)):
       return (
         lhsFrom.section == rhsFrom.section &&
         lhsFrom.index == rhsFrom.index &&
         lhsTo.section == rhsTo.section &&
         lhsTo.index == rhsTo.index)
 
-    case (let .ChangeItem(lhsFrom, lhsTo), let .ChangeItem(rhsFrom, rhsTo)):
+    case (let .changeItem(lhsFrom, lhsTo), let .changeItem(rhsFrom, rhsTo)):
       return (
         lhsFrom.section == rhsFrom.section &&
         lhsFrom.index == rhsFrom.index &&
         lhsTo.section == rhsTo.section &&
         lhsTo.index == rhsTo.index)
 
-    case (let .AddSection(lhsIndex), let .AddSection(rhsIndex)):
+    case (let .addSection(lhsIndex), let .addSection(rhsIndex)):
       return lhsIndex == rhsIndex
-    case (let .RemoveSection(lhsIndex), let .RemoveSection(rhsIndex)):
+    case (let .removeSection(lhsIndex), let .removeSection(rhsIndex)):
       return lhsIndex == rhsIndex
-    case (let .MoveSection(lhsIndex, lhsFrom), let .MoveSection(rhsIndex, rhsFrom)):
+    case (let .moveSection(lhsIndex, lhsFrom), let .moveSection(rhsIndex, rhsFrom)):
       return lhsIndex == rhsIndex && lhsFrom == rhsFrom
-    case (let .ReloadSection(lhsIndex), let .ReloadSection(rhsIndex)):
+    case (let .reloadSection(lhsIndex), let .reloadSection(rhsIndex)):
       return lhsIndex == rhsIndex
 
     default:

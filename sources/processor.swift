@@ -51,6 +51,10 @@ func changes<Item: DeltaItem>(from: [Item], to: [Item]) -> [DeltaChange] where I
         }
 
         let compareIndex = index + delta
+        if from.indices.contains(compareIndex) == false {
+          break
+        }
+
         let compareItem = from[compareIndex]
         let compareIdentifer = compareItem.deltaIdentifier
 

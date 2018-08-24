@@ -206,6 +206,32 @@ class DeltaProcessorSpec: QuickSpec {
           expect(records[1]).to(equal(record))
         }
       }
+
+      describe("Removing an item while moving another") {
+        beforeEach {
+          let from = [
+            Model(identifier: 0),
+            Model(identifier: 1),
+            Model(identifier: 2),
+          ]
+          let to = [
+            Model(identifier: 2),
+            Model(identifier: 1),
+          ]
+
+          records = self.records(from, to: to)
+          expect(records.count).to(equal(2))
+        }
+
+        it("moves the record") {
+          let removeRecord = DeltaChange.remove(index: 0)
+          expect(records[0]).to(equal(removeRecord))
+
+          let moveRecord = DeltaChange.move(index: 0, from: 2)
+          expect(records[1]).to(equal(moveRecord))
+        }
+      }
+
     }
   }
 

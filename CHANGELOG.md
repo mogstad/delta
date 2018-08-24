@@ -2,6 +2,13 @@
 
 `Delta` adheres to [Semantic Versioning](http://semver.org/).
 
+## [5.0.1] - 2018-08-24
+
+### Fixed
+
+- Prevent crash while generating change set while removing a record and moving 
+  records with a higher index.
+
 ## [5.0.0] - 2018-03-28
 
 - Compatibility for Swift 4.0

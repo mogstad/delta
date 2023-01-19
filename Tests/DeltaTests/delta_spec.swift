@@ -3,7 +3,7 @@ import Nimble
 @testable import Delta
 
 struct Section: DeltaSection, Equatable {
-
+ 
   let identifier: Int
   let items: [Model]
   var deltaIdentifier: Int { return self.identifier }

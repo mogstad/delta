@@ -2,7 +2,7 @@ import UIKit
 
 public extension UITableView {
 
-  public typealias TableViewUpdateCallback = (_ from: IndexPath, _ to: IndexPath) -> Void
+    typealias TableViewUpdateCallback = (_ from: IndexPath, _ to: IndexPath) -> Void
 
   /// Perform updates on the table view.
   ///
@@ -13,7 +13,7 @@ public extension UITableView {
   ///   Note: due to internals in UITableView’s and UICollecitonView’s we need
   ///   to query the cell using the old index path, and update the cell with
   ///   data from the new index path.
-  public func performUpdates(_ records: [CollectionRecord], update: TableViewUpdateCallback? = nil) {
+    func performUpdates(_ records: [CollectionRecord], update: TableViewUpdateCallback? = nil) {
     var changeRecords: [CollectionRecord] = []
 
     self.beginUpdates()

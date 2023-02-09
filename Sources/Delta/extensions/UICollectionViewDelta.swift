@@ -2,7 +2,7 @@ import UIKit
 
 public extension UICollectionView {
   
-  public typealias CollectionViewUpdateCallback = (_ from: IndexPath, _ to: IndexPath) -> Void
+    typealias CollectionViewUpdateCallback = (_ from: IndexPath, _ to: IndexPath) -> Void
 
   /// Perform updates on the collection view.
   ///
@@ -13,7 +13,7 @@ public extension UICollectionView {
   ///   Note: due to internals in UITableView’s and UICollecitonView’s we need
   ///   to query the cell using the old index path, and update the cell with 
   ///   data from the new index path.
-  public func performUpdates(_ records: [CollectionRecord], update: CollectionViewUpdateCallback? = nil) {
+    func performUpdates(_ records: [CollectionRecord], update: CollectionViewUpdateCallback? = nil) {
     self.performBatchUpdates({
       for record in records {
         switch record {

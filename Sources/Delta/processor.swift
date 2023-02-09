@@ -10,7 +10,7 @@ func changes<Item: DeltaItem>(from: [Item], to: [Item]) -> [DeltaChange] where I
   typealias DeltaCache = [Item.DeltaIdentifier: (index: Int, item: Item)]
 
   func added(_ to: [Item], fromCache: DeltaCache) -> [DeltaChange] {
-    return to.enumerated().flatMap { (index, element) -> DeltaChange? in
+      return to.enumerated().compactMap { (index, element) -> DeltaChange? in
       if fromCache[element.deltaIdentifier] == nil {
         return .add(index: index)
       }
@@ -19,7 +19,7 @@ func changes<Item: DeltaItem>(from: [Item], to: [Item]) -> [DeltaChange] where I
   }
 
   func removed(_ from: [Item], toCache: DeltaCache) -> [DeltaChange] {
-    return from.enumerated().flatMap { (index, item) -> DeltaChange? in
+      return from.enumerated().compactMap { (index, item) -> DeltaChange? in
       if let cacheEntry = toCache[item.deltaIdentifier] {
         if cacheEntry.item != item {
           return .change(index: cacheEntry.index, from: index)

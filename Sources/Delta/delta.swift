@@ -42,7 +42,7 @@ func generateSectionRecords<Section: DeltaSection>(from: [Section], to: [Section
   let records = changes(from: from, to: to)
   let recordsWithoutChange = records.filter { record in
     switch record {
-    case .change(_):
+    case .change(_, _):
       return false
     default:
       return true
